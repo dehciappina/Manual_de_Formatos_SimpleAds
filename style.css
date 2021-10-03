@@ -1,0 +1,577 @@
+@font-face {
+    font-family: Gordita;
+    src: url('assets/Gordita-Light.otf');
+    font-weight: 100 200;
+}
+
+@font-face {
+    font-family: Gordita;
+    src: url('assets/Gordita-Regular.otf');
+    font-weight: 300 400;
+}
+
+@font-face {
+    font-family: Gordita;
+    src: url('assets/Gordita-Medium.otf');
+    font-weight: 500 600;
+}
+
+@font-face {
+    font-family: Gordita;
+    src: url('assets/Gordita-Bold.otf');
+    font-weight: 700 800;
+}
+
+@font-face {
+    font-family: Gordita;
+    src: url('assets/Gordita-Black.otf');
+    font-weight: 900;
+}
+
+html, body, p, h1, h2, h3, h4, h5, h6 {
+    margin:0;
+    cursor:default;
+}
+
+html {
+    font-size:16px;
+    scroll-behavior:smooth;
+}
+
+body, button {
+    font-family: 'Gordita', sans-serif;
+}
+
+:root {
+    --c01: #010322;
+    --c02: #3d53fc;
+    --c03: #eff1f6;
+    --c04: #fd8820;
+    --c05: #ee4b29;
+    --c06: #E8EAF5;
+    --c07: #051678;
+    --c08: #535db0;
+}
+  
+a {
+    text-decoration: none;
+    color:unset;
+}
+
+header {
+    display: flex;
+    position: fixed;
+    height: clamp(3.8rem, 9vw, 5rem);
+    width: 100%;
+    background: white;
+    z-index: 5;
+} header > img {
+    width: clamp(8rem, 18vw, 10rem);
+    display: block;
+    margin: 0 auto;
+    transform: translateY(-50%);
+    position: relative;
+    top: 50%;
+}
+
+.mobile_hidden {
+    display:none;
+}
+
+.hamb {
+    position: absolute;
+    left: clamp(0.5rem, 3vw, 1.15rem);
+    height: 100%;
+    width: clamp(3.8rem, 9vw, 5rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+} .hamb > div {
+    width: clamp(1.4rem, 6vw, 1.7rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+} .hamb div div {
+    width: 100%;
+    height: 2.3px;
+    background: var(--c07);
+}
+
+
+.menu_bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+    background: rgb(5 22 120 / 20%);
+    transition:opacity 0.5s ease, visibility 0.5s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 3;
+} .menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: clamp(15rem, 75vw, 20rem);
+    max-width: 100%;
+    background: var(--c03);
+    height: 100%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-100%);
+    border-right: 1px solid #DDF;
+    display: flex;
+    justify-content: right;
+    flex-direction: column;
+    align-items: self-end;
+    overflow: auto;
+    border-left: 0.3rem solid var(--c02);
+    z-index: 5;
+} .menu_in {
+    width: clamp(14rem, 72vw, 19rem);
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 1rem;
+    box-sizing: border-box;
+    border-top: 2px solid var(--c06);
+} .menu span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--c02);
+    letter-spacing: 1px;
+    margin: 2rem 0 1rem 0;
+} .menu_in a, .collapsible {
+    font-size: clamp(0.8rem, 3.5vw, 1rem);
+    padding: 0.6rem 1.5rem 0.6rem 0.6rem;
+    transition: background-color 1s ease, color 1s ease;
+    color: var(--c08);
+    letter-spacing: 0.6px;
+    margin: 0.3rem 0 0.3rem 0;
+    background: rgb(255 255 255 / 33%);
+    font-weight: 500;
+} .menu a:hover, .collapsible:hover {
+    background-color:#ffffff;
+    transition: background-color 0.05s ease;
+    color:var(--c02);
+} .collapsible:hover div {
+    border-left: 0.4rem solid var(--c02);
+    transition: transform 0.15s ease-out, border-color 0.05s ease;
+} .close_menu {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: clamp(3.8rem, 9vw, 5rem);
+    background: white;
+    display: flex;
+    flex: none;
+    cursor: pointer;
+    z-index: 1;
+} .close_menu svg {
+    width: 1.4rem;
+    margin: 0 1rem;
+    padding: 0 0 0 clamp(0.5rem, 3vw, 1.15rem);
+}
+
+.flex_row {
+    display: flex;
+    flex-direction: row;
+}
+
+main {
+    padding: 5rem 0 0 0;
+    background: var(--c03);
+    width:100%;
+} main h1, main h2 {
+    font-size: clamp(1rem, 12vw, 3.3rem);
+    line-height: clamp(1rem, 14vw, 3.4rem);
+    font-weight: 900;
+    margin: 0 0 0.6rem 0;
+    color: var(--c02);
+    text-transform: uppercase;
+    background: -webkit-linear-gradient( 135deg , #00a7ef, var(--c02));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    user-select: none;
+} .formato_sec p {
+    font-size: clamp(0.9rem, 4.5vw, 1rem);
+    line-height: clamp(1.4rem, 4vw, 1.5rem);
+    margin-bottom: 1rem;
+    max-width: 42rem;
+    letter-spacing: 0.5px;
+} .formato_sec {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1rem, 5vw, 2rem) 0 clamp(1rem, 10vw, 3rem) 0;
+} .formato_sec:not(:first-child) {
+    padding: clamp(1rem, 15vw, 3rem) 0 clamp(1rem, 10vw, 3rem) 0;
+} .cta01{
+    margin: 0 0 1.4rem;
+    padding: 0.5rem 2rem;
+    display: inline-block;
+    background: linear-gradient( 25deg, var(--c02) 38%, var(--c07) 130%);
+    border-radius: 10rem 10rem 10rem 0;
+    color: var(--c03);
+    font-size: clamp(0.9rem, 5vw, 1.1rem);
+} .formato_sec article {
+    width: clamp(17rem, 85vw, 40rem);
+    margin: 0 auto;
+} section {
+    border-bottom: 2px solid #DDF;
+}
+
+.bullets {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--c08);
+    font-weight: 500;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0rem 3rem;
+    justify-content: stretch;
+} .bullets li {
+    display: flex;
+    margin-bottom: 0.6rem;
+    align-items: center;
+} .bullets p {
+    font-size: clamp(0.7rem, 3.5vw, 0.8rem);
+    letter-spacing: 0.6px;
+    margin-bottom: 0;
+} .bullets img {
+    width: clamp(0.9rem, 5vw, 1.1rem);
+    height: clamp(0.9rem, 5vw, 1.1rem);
+} .bullets li div {
+    background: white;
+    margin: 0 0.9rem 0 0;
+    border-radius: 10rem;
+    width: clamp(2rem, 9vw, 2.2rem);
+    height: clamp(2rem, 9vw, 2.2rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} .img_ctnr {
+    width: 100%;
+    overflow: hidden;
+} .img_ctnr img {
+    width: clamp(17rem, 91vw, 35rem);
+    margin: 1rem auto;
+    display: block;
+    object-fit: contain;
+} .mobile_img img {
+    height: clamp(15rem, 130vw, 37rem);
+}
+
+.specs {
+    background: white;
+} .specs div {
+    margin: 0 auto 3rem auto;
+    width: clamp(17rem, 85vw, 62rem);
+} .specs sub {
+    font-size: clamp(0.8rem, 4vw, 0.9rem);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 0 0 0.8rem 0;
+    color: var(--c08);
+    margin-bottom: 0.2rem;
+    display: block;
+    letter-spacing: 1px;
+    position: sticky;
+    top: clamp(3.8rem, 9vw, 5rem);
+    background: var(--c06);
+    padding: 0.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #DDF;
+} .specs h2 {
+    font-size: clamp(1.5rem, calc(16vw - 2rem), 1.9rem);
+    line-height: clamp(2.1rem, 9vw, 2.6rem);
+} .specs h3 {
+
+} .specs p {
+    font-size: clamp(0.9rem, 4.5vw, 1rem);
+    line-height: clamp(1.4rem, 4vw, 1.6rem);
+    margin-bottom: 1rem;
+}
+
+.divisor1 {
+    height: 62%;
+    width: 1px;
+    background: #CCE;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 1rem;
+}
+
+.menu_footer {
+    font-size: 0.9rem;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: clamp(3.8rem, 9vw, 5rem);
+    background: white;
+    flex: none;
+    margin: 2rem 0 0 0;
+    box-shadow: 0 -2rem 2rem var(--c03);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--c08);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.code {
+    background: var(--c03);
+    letter-spacing: 0.5px;
+    font-family: monospace;
+    font-weight: 900;
+    color: var(--c08);
+    max-width: 100%;
+    overflow: auto;
+    word-wrap: break-word;
+    padding: 0.2rem 0.5rem;
+} .specs .code {
+    font-size: clamp(0.8rem, 4.5vw, 0.9rem);
+}
+
+
+.interscroller h2 {
+    font-size: clamp(1rem, 9vw, 2.6rem);
+    line-height: clamp(1rem, 9vw, 2.2rem);
+}
+
+
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #D6DBDE;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #c2c7ca;
+  }
+
+
+
+
+
+  /* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    cursor: pointer;
+    border: none;
+    text-align: left;
+    outline: none;
+    display: flex;
+    align-items: center;
+  } .collapsible > div {
+    display: block;
+    margin: 0 0.6rem;
+    transform: rotate(0deg);
+    transition: transform 0.15s ease-out, border-color 1s ease;
+    width: 0;
+    height: 0;
+    border-top: 0.25rem solid transparent;
+    border-bottom: 0.25rem solid transparent;
+    border-left: 0.4rem solid var(--c08);
+  } .active > div {
+    transform: rotate(90deg);
+  } 
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    /* background-color: transparent; */
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .collapsible_content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    align-self: end;
+  } .collapsible_content a {
+    background:var(--c06);
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: white;
+    background: var(--c02);
+    -webkit-text-fill-color: unset;
+    -webkit-background-clip: unset;
+  } ::selection {
+    color: white;
+    background: var(--c02);
+    -webkit-background-clip: unset;
+    -webkit-text-fill-color: unset;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:138vh) {
+
+    .desktop_hidden {
+        display:none;
+    } .mobile_hidden {
+        display:initial;
+    }
+    
+    main {
+        padding: 0;
+        overflow-x: hidden;
+    } .formato_sec {
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem 0 clamp(1rem, 10vw, 3rem) 0;
+    } .formato_sec article {
+        width: 32%;
+        min-width: 21rem;
+        margin: 0 3vw 0 calc(10vw - 4rem);
+    } .cta01{
+        transition: filter 0.1s ease, transform 0.05s ease;
+    } .cta01:hover {
+        filter: brightness(1.2);
+        transform: scale(1.02);
+    } .cta01:active {
+        transition: filter 0.1s ease, transform 0.02s ease;
+        transform: scale(0.99);
+    }
+
+    .img_ctnr img {
+        width: clamp(17rem, 90vw, 55rem);
+        margin: 0;
+        object-position: calc(25vw - 17rem);
+    } .img_ctnr {
+        width: 62%;
+    }
+    
+    .menu {
+        position: sticky;
+        top: 0;
+        transform: translateX(0);
+        height: 100vh;
+        width: clamp(19rem, 24vw, 20.5rem);
+        flex: none;
+        transition:none;
+        padding-top: 0;
+        overflow: hidden;
+        box-shadow: 0 8rem 8rem #cfd5e0;
+    } .menu:hover {
+        overflow: auto;
+        margin-right: 0;
+    } .menu:hover a {
+        margin: 0.3rem 0 0.3rem 5px;
+    } .menu:hover span {
+        margin: 2rem 0 1rem 5px;
+    } .menu:hover .collapsible {
+        margin: 0.3rem 0 0.3rem 5px;
+    } .menu:hover .menu_footer {
+        margin: 2rem 0 0 5px;
+    }  .menu_in {
+        border-top: none;
+    } .menu_bg {
+        display:none;
+    } .menu_in a, .collapsible {
+        font-size: 0.8rem;
+    }
+
+    header {
+        position: relative;
+        border-left: 0.3rem solid var(--c02);
+        box-sizing: border-box;
+    } header > img {
+        width: clamp(19rem, 24vw, 20.5rem);
+        height: 2.8rem;
+        margin:0;
+    }
+
+    .specs {
+
+    } .specs div {
+        width: clamp(17rem, 60vw, 50rem);
+    } .specs sub {
+        margin: 0 0 5rem 0;
+    }
+    
+    .header_anchors {
+        margin: 0 0 0 calc(10vw - 4rem);
+        display: flex;
+        align-items: center;
+        width: clamp(23rem, 35vw, 27rem);
+        justify-content: space-between;
+        color: var(--c08);
+        font-size: clamp(0.9rem, 4.5vw, 1rem);
+        font-weight: 500;
+    } .header_anchors a {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 0 1rem;
+        margin-left: calc(-1.6rem);
+    } .header_anchors span {
+        padding: 0.3rem 0.6rem;
+        transition: background-color 0.2s ease-out, color 0.2s ease-out;
+        background-color: transparent;
+    } .header_anchors a:hover span {
+        background-color: var(--c03);
+        color:var(--c02);
+    }
+    .interscroller h2 {
+        font-size: clamp(2.3rem, 3vw, 2.6rem);
+    }
+
+}
