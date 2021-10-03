@@ -1,0 +1,1 @@
+# Manual_de_Formatos_SimpleAds
