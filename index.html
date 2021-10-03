@@ -55,15 +55,15 @@
                 <div class="menu_in">
 
                     <span>ESPECIFICAÇÕES GERAIS</span>
-                    <a href="#">Regras e prazos para envios de material</a>
-                    <a href="#">Veiculação via tag</a>
-                    <a href="#">Contabilização através de terceiros</a>
-                    <a href="#">Utilização de fontes</a>
-                    <a href="#">Tempo de animação</a>
-                    <a href="#">Implementação de clicktags e URL de redirecionamento</a>
-                    <a href="#">Práticas vetadas</a>
-                    <a href="#">Peso máximo</a>
-                    <a href="#">Compatibilidade</a>
+                    <a href="#regras_e_prazos">Regras e prazos para envios de material</a>
+                    <a href="#veiculacao_via_tag">Veiculação via tag</a>
+                    <a href="#contabilizacao_por_terceiros">Contabilização através de terceiros</a>
+                    <a href="#fontes">Utilização de fontes</a>
+                    <a href="#tempo_de_animacao">Tempo de animação</a>
+                    <a href="#implementacao_clicktags">Implementação de clicktags e URL de redirecionamento</a>
+                    <a href="#praticas_vetadas">Práticas vetadas</a>
+                    <a href="#peso_maximo">Peso máximo</a>
+                    <a href="#compatibilidade">Compatibilidade</a>
 
                     <span>FORMATOS DE ANÚNCIO</span>
 
@@ -195,7 +195,7 @@
                     <article>
                         <h2>Interscroller</h2>
         
-                        <p>Apresentamos a nova solução para campanhas em Search, confira todos os recursos que oferecemos.</p>
+                        <p>Banner ou vídeo localizado entre o texto de artigos mobile, entregando uma mensagem de alto impacto com efeito Parallax no contexto e na navegação do usuário.</p>
 
                         <a class="cta01" href="#">Conheça o formato</a>
 
@@ -235,7 +235,7 @@
                 <section class="specs">
                     <sub>Especificações gerais</sub>
 
-                    <div>
+                    <div id="regras_e_prazos">
                         <h2>Regras e prazos para envios de material</h2>
 
                         <p>O envio do material deve ser feito por e-mail, 72 horas antes da data de início da campanha, para validação da equipe. Caso o material seja reprovado, o prazo reiniciará.</p>
@@ -244,7 +244,7 @@
 
                         <p>Caso esteja utilizando o suporte criativo SimpleAds, forneça materiais suficientes para a criação, incluindo o briefing preenchido, PSDs, fontes e referências. O material deve ser validado pela equipe para que o prazo comece a ser contado.</p>
                     </div>
-                    <div>
+                    <div id="veiculacao_via_tag">
                         <h2>Veiculação via tag</h2>
 
                         <p>Aceitamos tags de agência para veiculação de formatos display e Rich Media. As seguintes macros são necessárias:</p>
@@ -260,13 +260,19 @@
                         <p>Para controle de entrega, o relatório gerado pela SimpleAds é considerado, pois é gerado por um adserver internacional homologado.</p>
                     </div>
                     
-                    <div>
+                    <div id="contabilizacao_por_terceiros">
                         <h2>Contabilização por terceiros</h2>
 
                         <p>A contabilização pode ser feita através de adservers terceiros, utilizando pixel de contabilização de impressões e URL de redirecionamento com contabilização que devem ser enviadas junto com o material da campanha.</p>
                     </div>
                     
-                    <div>
+                    <div id="fontes">
+                        <h2>Uso de fontes</h2>
+
+                        <p>Para peças em HTML5, é permitido o uso de fontes externas importadas da biblioteca do Google Fonts (https://fonts.google.com/).</p>
+                    </div>
+                    
+                    <div id="tempo_de_animacao">
                         <h2>Tempo de animação</h2>
 
                         <p>Para peças em gif animado ou HTML5 não há restrição de tempo, porém é importante que a animação principal não ultrapasse 30 segundos, para elevar a retenção de atenção do usuário. O uso de looping na animação é opcional, dependendo exclusivamente da criação.</p>
@@ -274,7 +280,7 @@
                         <p>Para peças de vídeo, é altamente recomendável a utilização de filmes com cortes de 15s ou 30s.</p>
                     </div>
                     
-                    <div>
+                    <div id="implementacao_clicktags">
                         <h2>Implementação de Clicktags e URLs de redirecionamento</h2>
 
                         <p>Em todas as campanhas é obrigatório o envio de ao menos uma URL de redirecionamento, que leva o usuário à landing page da campanha, após o clique. Essa URL pode ser parametrizada para identificação do volume de entrega no Google Analytics.</p>
@@ -292,6 +298,72 @@
                         <p>3. Criar uma área de clique para a peça, incluindo um ID nesse elemento, como:</p>
 
                         <p class="code">&lt;a id="clickArea"&gt;&lt;/a&gt;</p>
+
+                        <p>4. Através desse ID, é necessário associar o elemento à variável (este código deve ser chamado ao final do código, de preferência antes do fechamento da tag da peça criativa:</p>
+
+                        <p class="code">
+                            &lt;script type="text/javascript"&gt;<br>
+                            &nbsp;&nbsp;&nbsp;var clickArea = document.getElementById("clickArea");<br>
+                            &nbsp;&nbsp;&nbsp;clickArea.onclick = function(){<br>
+                                &nbsp;&nbsp;&nbsp;window.open(clickTag, "blank"); <br>
+                           } <br>
+                           &lt;/script&gt;
+                        </p>
+
+                        <p>5. Salve o arquivo principal como index.html e envie todos os arquivos juntos em formato zip, sem subdiretórios.</p>
+                    </div>
+                    
+                    <div id="praticas_vetadas">
+                        <h2>Práticas vetadas</h2>
+
+                        <ul>
+                            <li>
+                                <p>Não utilize imagens ou vídeos protegidos por direitos autorais sem autorização;</p>
+                            </li>
+                            <li>
+                                <p>Não utilize scripts que desempenhem qualquer função além das necessárias para animação e/ou interação com a peça;</p>
+                            </li>
+                            <li>
+                                <p>Campanhas podem ser vetadas ou submetidas à análise caso utilizem materiais ou URL de destino que possam caracterizar:</p>
+
+                                <ul>
+                                    <li>
+                                        <p>Coleta inapropriada de dados pessoais dos usuários;</p>
+                                        <p>Material político;</p>
+                                        <p>Materiais médicos ou de medicamentos controlados;</p>
+                                        <p>Fake ads e fake news ou qualquer outro tipo de mensagem inapropriada.</p>
+                                    </li>
+                                </ul>
+
+                                <p>Peças Rich Media com formulário de lead passarão por uma análise de nossa equipe de tecnologia.</p>
+                            </li>
+                            
+                            <p>Caso necessário, o prazo para aprovação dos materiais pode aumentar em 24 horas.</p>
+                        </ul>
+                    </div>
+                    
+                    <div id="peso_maximo">
+                        <h2>Peso máximo</h2>
+
+                        <p>O peso máximo de cada peça varia de acordo com cada formato, nas próximas páginas há a especificação de cada um. Procure deixar a peça com o menor peso possível, pois isso facilita o carregamento na página para os usuários e eleva o resultado da campanha. Utilize compressores de imagem, opte pelo formato mais leve para cada imagem ou priorize a utilização de sprites. Para códigos longos, minifique para reduzir o peso.</p>
+
+                        <ul>
+                            <li>
+                                <p>Para comprimir PNGs e JPGs, utilize: https://tinypng.com</p>
+                            </li>
+                            <li>
+                                <p>Para comprimir GIFs, utilize: https://gifcompressor.com</p>
+                            </li>
+                            <li>
+                                <p>Para minificar códigos JS, CSS e HTML, utilize: http://minifycode.com</p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div id="compatibilidade">
+                        <h2>Compatibilidade</h2>
+
+                        <p>Nossos formatos são compatíveis com todos os navegadores, em todas as versões mais recentes que somadas atinjam mais de 99% dos usuários.</p>
                     </div>
                 </section>
             </main>

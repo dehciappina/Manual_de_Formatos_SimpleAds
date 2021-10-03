@@ -3,7 +3,9 @@ const menuBg = document.querySelector('.menu_bg')
 const menu = document.querySelector('.menu')
 const closeMenu = document.querySelector('.close_menu')
 
-let menuAnchors = document.querySelectorAll('.menu_in a')
+const menuAnchors = document.querySelectorAll('.menu_in a')
+
+const voltarAoTopo = document.querySelector('.menu_footer')
 
 let showingMenu = false;
 
@@ -25,20 +27,23 @@ function toggleMenu() {
 
         menu.style.transform = 'translateX(-100%)';
     }
+}
 
+if (!window.matchMedia("(min-width: 138vh)").matches) {
+  for(i = 0; i < menuAnchors.length; i++) {
+    menuAnchors[i].addEventListener('click', function() {
+      setTimeout(() => {
+        toggleMenu()
+      }, 50);
+    })
+  }
 }
 
 hamb.addEventListener('click', toggleMenu)
 menuBg.addEventListener('click', toggleMenu)
 closeMenu.addEventListener('click', toggleMenu)
+voltarAoTopo.addEventListener('click', toggleMenu)
 
-for(i = 0; i < menuAnchors.length; i++) {
-  menuAnchors[i].addEventListener('click', function() {
-    setTimeout(() => {
-      toggleMenu()
-    }, 50);
-  })
-}
 
 var coll = document.getElementsByClassName("collapsible");
 var i;
