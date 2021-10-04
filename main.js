@@ -7,7 +7,7 @@ const menuAnchors = document.querySelectorAll('.menu_in a')
 
 const voltarAoTopo = document.querySelector('.menu_footer')
 
-let showingMenu = false;
+let showingMenu = true;
 
 function toggleMenu() {
 
@@ -30,6 +30,7 @@ function toggleMenu() {
 }
 
 if (!window.matchMedia("(min-width: 138vh)").matches) {
+
   for(i = 0; i < menuAnchors.length; i++) {
     menuAnchors[i].addEventListener('click', function() {
       setTimeout(() => {
@@ -37,12 +38,18 @@ if (!window.matchMedia("(min-width: 138vh)").matches) {
       }, 50);
     })
   }
+  voltarAoTopo.addEventListener('click', toggleMenu)
+
+  setTimeout(() => {
+    closeMenu.click()
+  }, 350);
+} else {
+
 }
 
 hamb.addEventListener('click', toggleMenu)
 menuBg.addEventListener('click', toggleMenu)
 closeMenu.addEventListener('click', toggleMenu)
-voltarAoTopo.addEventListener('click', toggleMenu)
 
 
 var coll = document.getElementsByClassName("collapsible");
@@ -77,7 +84,6 @@ ScrollReveal().reveal('main section article', {
   duration:1600,
   delay:10,
   easing: 'ease',
-  reset: true,
   mobile: false
 });
 
@@ -85,8 +91,15 @@ ScrollReveal().reveal('.img_ctnr', {
   duration:1600,
   delay:250,
   easing: 'ease',
-  reset: true,
   distance: '1rem',
   origin: 'right',
   mobile: false
 });
+
+ScrollReveal().reveal('.specs > div', {
+  duration:1200,
+  delay:150,
+  easing: 'ease',
+  mobile: false
+});
+
