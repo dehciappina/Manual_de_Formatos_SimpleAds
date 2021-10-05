@@ -1,3 +1,16 @@
+
+const loading = document.querySelector('#loading')
+
+document.onreadystatechange = function () {
+    if (document.readyState == "interactive" || document.readyState == "complete") {
+
+        loading.style.opacity = 0;
+        loading.style.visibility = 'hidden';
+
+    }
+}
+
+
 const hamb = document.querySelector('.hamb')
 const menuBg = document.querySelector('.menu_bg')
 const menu = document.querySelector('.menu')
@@ -43,8 +56,6 @@ if (!window.matchMedia("(min-width: 138vh)").matches) {
   setTimeout(() => {
     closeMenu.click()
   }, 350);
-} else {
-
 }
 
 hamb.addEventListener('click', toggleMenu)
@@ -97,8 +108,8 @@ ScrollReveal().reveal('.img_ctnr', {
 });
 
 ScrollReveal().reveal('.specs > div', {
-  duration:1200,
-  delay:150,
+  duration:1400,
+  delay:200,
   easing: 'ease',
   mobile: false
 });

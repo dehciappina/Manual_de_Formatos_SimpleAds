@@ -1,3 +1,17 @@
+#loading {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #eff1f6;
+    background-size: cover;
+    background-position: bottom;
+    background-attachment: fixed;
+    z-index: 999;
+    transition: opacity 0.4s ease-in, visibility 0.4s ease;
+}
+
 @font-face {
     font-family: Gordita;
     src: url('assets/Gordita-Light.otf');
@@ -270,8 +284,6 @@ main {
     margin: 1rem auto;
     display: block;
     object-fit: contain;
-} .mobile_img img {
-    height: clamp(15rem, 130vw, 37rem);
 }
 
 .specs {
@@ -356,7 +368,7 @@ main {
 } .menu_footer a {
     width: 2.2rem;
     height: 2.2rem;
-    background: var(--c06);
+    background: var(--c03);
     border-radius: 2rem;
     display: flex;
     justify-content: center;
@@ -534,6 +546,7 @@ main {
 
     .img_ctnr img {
         width: clamp(17rem, 90vw, 55rem);
+        height: clamp(15rem, 130vw, 37rem);
         margin: 0;
         object-position: left;
     } .img_ctnr {
