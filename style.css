@@ -90,7 +90,8 @@ header {
     margin: 0 auto;
     position: relative;
 } .logo img {
-
+    object-fit: contain;
+    width: 100%;
 }
 
 .mobile_hidden {
@@ -155,7 +156,7 @@ header {
     width: clamp(14rem, 72vw, 19rem);
     display: flex;
     flex-direction: column;
-    padding: 0 0 0 1rem;
+    padding: 1rem 0 0 1rem;
     box-sizing: border-box;
     border-top: 2px solid var(--c06);
 } .menu span {
@@ -163,7 +164,7 @@ header {
     font-weight: 700;
     color: var(--c02);
     letter-spacing: 1px;
-    margin: 2rem 0 1rem 0;
+    margin: 1rem 0 0.6rem 0;
 } .menu_in a, .collapsible {
     font-size: clamp(0.8rem, 3.5vw, 1rem);
     padding: 0.6rem 1.5rem 0.6rem 0.6rem;
@@ -195,6 +196,9 @@ header {
     width: 1.4rem;
     margin: 0 1rem;
     padding: 0 0 0 clamp(0.5rem, 3vw, 1.15rem);
+} .menu_in a img {
+    width: 0.6rem;
+    margin: 0 0.4rem;
 }
 
 .flex_row {
@@ -234,14 +238,43 @@ main {
     padding: 0.5rem 2rem;
     display: inline-block;
     background: linear-gradient( 25deg, var(--c02) 38%, var(--c07) 130%);
-    border-radius: 10rem 10rem 10rem 0;
+    border-radius: 10rem 0 10rem 10rem;
     color: var(--c03);
     font-size: clamp(0.9rem, 5vw, 1.1rem);
 } .formato_sec article {
     width: clamp(17rem, 85vw, 40rem);
     margin: 0 auto;
-} section {
+} .formato_sec {
     border-bottom: 2px solid #DDF;
+} .formato_sec menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+} .formato_sec menu li {
+    cursor: pointer;
+    background-color: var(--c06);
+    padding: 0.3rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--c08);
+    flex: 1;
+    transition: box-shadow 0.3s ease, color 0.3s ease, background-color 0.9s ease;
+    box-shadow: inset 0 0 0 var(--c02);
+} .formato_sec menu li:first-child {
+    border-radius: 1rem 0 0 1rem;
+} .formato_sec menu li:last-child {
+    border-radius: 0 1rem 1rem 0
+}  .formato_sec .active_type {
+    color: var(--c03);
+    box-shadow: inset 0 2rem 0 var(--c02);
+} .active_type::after {
+    content:'';
+    position:absolute;
+} .formato_sec menu li:hover {
+    transition: background-color 0.05s ease;
+    background-color:white;
 }
 
 .bullets {
@@ -258,6 +291,8 @@ main {
     display: flex;
     margin-bottom: 0.6rem;
     align-items: center;
+} .bullets li a {
+    text-decoration: underline;
 } .bullets p {
     font-size: clamp(0.7rem, 3.5vw, 0.8rem);
     letter-spacing: 0.6px;
@@ -266,7 +301,7 @@ main {
 } .bullets img {
     width: 1rem;
     height: 0.9rem;
-} .bullets li div {
+} .bullet_icon01 {
     background: white;
     margin: 0 0.9rem 0 0;
     border-radius: 10rem;
@@ -285,6 +320,19 @@ main {
     display: block;
     object-fit: contain;
 }
+
+.text_bullet {
+
+} .text_bullet ul {
+    padding-left: 2.9rem;
+} .text_bullet li {
+    opacity: 0.8;
+    margin: -0.8rem 0 0 0;
+} .text_bullet ul li:not(:last-child) {
+    margin: -0.8rem 0 1rem 0;
+}
+
+
 
 .specs {
     background: white;
@@ -582,6 +630,10 @@ main {
         width: clamp(19rem, 24vw, 20.5rem);
         height: 2.8rem;
         margin:0;
+    }
+
+    .bullets {
+        flex-direction: column;
     }
 
     .specs {

@@ -10,7 +10,6 @@ document.onreadystatechange = function () {
     }
 }
 
-
 const hamb = document.querySelector('.hamb')
 const menuBg = document.querySelector('.menu_bg')
 const menu = document.querySelector('.menu')
@@ -96,7 +95,13 @@ ScrollReveal().reveal('main section article', {
   delay:10,
   easing: 'ease',
   mobile: false
+}); ScrollReveal().reveal('main section article', {
+  duration:1600,
+  delay:10,
+  origin: 'bottom',
+  easing: 'ease',
 });
+
 
 ScrollReveal().reveal('.img_ctnr', {
   duration:1600,
@@ -105,12 +110,39 @@ ScrollReveal().reveal('.img_ctnr', {
   distance: '1rem',
   origin: 'right',
   mobile: false
+}); ScrollReveal().reveal('.img_ctnr', {
+  duration:2400,
+  delay:100,
+  easing: 'ease',
+  desktop: false
 });
+
 
 ScrollReveal().reveal('.specs > div', {
   duration:1400,
   delay:200,
   easing: 'ease',
   mobile: false
+}); ScrollReveal().reveal('.specs > div', {
+  duration:1400,
+  delay:200,
+  easing: 'ease',
+  origin: 'bottom',
+  desktop: false
 });
 
+
+
+
+// const formatoImg = document.querySelectorAll('.img_ctnr img');
+
+// document.body.onscroll = function() {
+    
+//   let windowPosition = window.pageYOffset;
+
+//   for(i=0;i<formatoImg.length;i++) {
+//     formatoImg[i].style.transform = "translateY(" + windowPosition + "px)";
+//   }
+
+  
+// }

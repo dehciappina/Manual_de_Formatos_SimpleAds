@@ -10,7 +10,7 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
-<body>
+<body id="body">
     <div id="loading"></div>
     
     <header>
@@ -21,7 +21,7 @@
         </div>
 
         <a class="logo" href="https://simpleads.com.br/" target="_blank">
-            <img src="assets/logo_sa.svg" alt="" draggable="false">
+            <img src="assets/logo_simpleads.png" alt="" draggable="false">
         </a>
 
         <div class="mobile_hidden divisor1"></div>
@@ -56,6 +56,10 @@
                 </div>
 
                 <div class="menu_in">
+                    <a href="#body">
+                        <img src="assets/icons/home.svg" alt="">
+                        Início
+                    </a>
 
                     <span>FORMATOS DE ANÚNCIO</span>
 
@@ -64,13 +68,13 @@
                         Exclusivos SimpleAds
                     </button>
                     <div class="collapsible_content">
-                        <a href="#excroll_rm">eXcroll Rich Media - Desktop</a>
-                        <a href="#excroll_rm">eXcroll Rich Media - Mobile</a>
-                        <a href="#excroll_rm">eXcroll Video - Desktop</a>
-                        <a href="#excroll_rm">eXcroll Video - Mobile</a>
+                        <a href="#excroll_rm">eXcroll Rich Media</a>
+                        <a href="#excroll_rm">eXcroll Video</a>
+                        <a href="#excroll_rm">eXcroll Display</a>
                         <a href="#interscroller">Interscroller Rich Media</a>
                         <a href="#interscroller">Interscroller Video</a>
                         <a href="#interscroller">Interscroller Display</a>
+                        <a href="#">Edge</a>
                     </div>
 
                     <button type="button" class="collapsible clicked">
@@ -78,6 +82,7 @@
                         Mídia Programática
                     </button>
                     <div class="collapsible_content">
+                        <a href="#">Displays IAB</a>
                         <a href="#">Youtube Trueview</a>
                         <a href="#">Youtube Bumper</a>
                         <a href="#">Youtube Discovery</a>
@@ -144,32 +149,135 @@
         
                         <p>Formato exclusivo desenvolvido para criar uma experiência imersiva ao usuário com a mensagem do anunciante, aproveitando o scroll da página e as funcionalidades do formato para criar interação entre usuário e anunciante.</p>
 
-                        <a class="cta01" href="#">Conheça o formato</a>
-
                         <ul class="bullets">
                             <li>
-                                <div title="Tipo de arquivo">
+                                <div class="bullet_icon01" title="Tipo de arquivo">
                                     <img src="assets/icons/file_type.svg" alt="">
                                 </div>
                                 <p>Anúncio em HTML5 (.zip)</p>
                             </li>
                             <li>
-                                <div title="Peça disponível em Desktop">
+                                <div class="bullet_icon01" title="Peça disponível em Desktop">
                                     <img src="assets/icons/desktop.svg" alt="">
                                 </div>
                                 <p>1100x594px (peso máximo: 380kb)</p>
                             </li>
                             <li>
-                                <div  title="Peça disponível em Mobile">
+                                <div class="bullet_icon01"  title="Peça disponível em Mobile">
                                     <img src="assets/icons/smartphone.svg" alt="">
                                 </div>
                                 <p>320x386px (peso máximo: 280kb)</p>
                             </li>
                             <li>
-                                <div title="Tipo de comercialização">
+                                <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/money.svg" alt="">
                                 </div>
                                 <p>Comercializado por CPM</p>
+                            </li>
+                            <li>
+                                <div class="bullet_icon01" title="Tipo de comercialização">
+                                    <img src="assets/icons/info.svg" alt="">
+                                </div>
+                                <p>
+                                    <a href="#">Prazos e boas práticas</a>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="bullet_icon01" title="Tipo de comercialização">
+                                    <img src="assets/icons/clicktag.svg" alt="">
+                                </div>
+                                <p>
+                                    <a href="#">Implementação da Clicktag</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </article>
+
+                    <div class="img_ctnr">
+                        <img src="assets/excroll_rm_01.png" alt="Formatos rich media exclusivos e interativos" draggable="false">
+                    </div>
+                </section>
+                
+                <section id="formatos_facebook" class="formato_sec">
+                    <article>
+                        <h2>Facebook Business</h2>
+
+                        <menu>
+                            <li class="active_type">Imagem</li>
+                            <li>Video</li>
+                            <li>Carrossel</li>
+                            <li>Coleção</li>
+                        </menu>
+        
+                        <p>O Feed de Notícias do Facebook é uma lista que se atualiza constantemente com atualizações de status, fotos, vídeos e muito mais no meio da página inicial do Facebook.</p>
+
+                        <ul class="bullets">
+                            <li>
+                                <div class="bullet_icon01" title="Tipo de comercialização">
+                                    <img src="assets/icons/money.svg" alt="">
+                                </div>
+                                <p>Comercializado por CPM</p>
+                            </li>
+
+                            <li>
+                                <div class="bullet_icon01" title="Tipo de comercialização">
+                                    <img src="assets/icons/info.svg" alt="">
+                                </div>
+                                <p>
+                                    <a href="#">Prazos e boas práticas</a>
+                                </p>
+                            </li>
+
+                            <li>
+                                <div class="bullet_icon01" title="Tipo de comercialização">
+                                    <img src="assets/icons/info.svg" alt="">
+                                </div>
+                                    <p>Recomendações de design</p>
+                            </li>
+
+                            <li>
+                                <span class="text_bullet">
+                                    <ul>
+                                        <li><p>Tipo de arquivo: JPG ou PNG</p></li>
+                                        <li><p>Taxa de proporção: 1,91:1 a 1:1</p></li>
+                                        <li><p>Resolução: pelo menos 1080 x 1080 pixels</p></li>
+                                    </ul>
+                                </span>
+                            </li>
+
+                            <li>
+                                <div class="bullet_icon01" title="Tipo de comercialização">
+                                    <img src="assets/icons/text.svg" alt="">
+                                </div>
+                                    <p>Recomendações de texto</p>
+                            </li>
+
+                            <li>
+                                <span class="text_bullet">
+                                    <ul>
+                                        <li><p>Texto principal: 125 caracteres</p></li>
+                                        <li><p>Título: 40 caracteres</p></li>
+                                        <li><p>Descrição: 30 caracteres</p></li>
+                                    </ul>
+                                </span>
+                            </li>
+
+                            <li>
+                                <div class="bullet_icon01" title="Tipo de comercialização">
+                                    <img src="assets/icons/text.svg" alt="">
+                                </div>
+                                    <p>Requisitos técnicos</p>
+                            </li>
+
+                            <li>
+                                <span class="text_bullet">
+                                    <ul>
+                                        <li><p>Tamanho máximo do arquivo: 30 MB</p></li>
+                                        <li><p>Largura mínima: 600 pixels</p></li>
+                                        <li><p>Altura mínima: 600 pixels</p></li>
+                                        <li><p>Tolerância da taxa de proporção: 3%</p></li>
+                                    </ul>
+                                </span>
                             </li>
                         </ul>
                     </article>
@@ -182,26 +290,30 @@
                 <section id="interscroller" class="formato_sec interscroller">
                     <article>
                         <h2>Interscroller</h2>
+
+                        <menu>
+                            <li class="active_type">Rich Media</li>
+                            <li>Video</li>
+                            <li>Display</li>
+                        </menu>
         
                         <p>Banner ou vídeo localizado entre o texto de artigos mobile, entregando uma mensagem de alto impacto com efeito Parallax no contexto e na navegação do usuário.</p>
 
-                        <a class="cta01" href="#">Conheça o formato</a>
-
                         <ul class="bullets">
                             <li>
-                                <div title="Tipo de arquivo">
+                                <div class="bullet_icon01" title="Tipo de arquivo">
                                     <img src="assets/icons/file_type.svg" alt="">
                                 </div>
                                 <p>Peça em HTML5 (.zip), vídeo (.mp4) ou Display (.jpeg, .png, .gif)</p>
                             </li>
                             <li>
-                                <div  title="Peça disponível em Mobile">
+                                <div class="bullet_icon01"  title="Peça disponível em Mobile">
                                     <img src="assets/icons/smartphone.svg" alt="">
                                 </div>
                                 <p>320x480px (peso máximo: 380kb)</p>
                             </li>
                             <li>
-                                <div title="Tipo de comercialização">
+                                <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/money.svg" alt="">
                                 </div>
                                 <p>Comercializado por CPM</p>
@@ -220,29 +332,27 @@
         
                         <p>Apresentamos a nova solução para campanhas em Search, confira todos os recursos que oferecemos.</p>
 
-                        <a class="cta01" href="#">Conheça o formato</a>
-
                         <ul class="bullets">
                             <li>
-                                <div title="Tipo de arquivo">
+                                <div class="bullet_icon01" title="Tipo de arquivo">
                                     <img src="assets/icons/file_type.svg" alt="">
                                 </div>
                                 <p>Anúncio em HTML5 (.zip)</p>
                             </li>
                             <li>
-                                <div title="Peça disponível em Desktop">
+                                <div class="bullet_icon01" title="Peça disponível em Desktop">
                                     <img src="assets/icons/desktop.svg" alt="">
                                 </div>
                                 <p>1100x594px (peso máximo: 380kb)</p>
                             </li>
                             <li>
-                                <div  title="Peça disponível em Mobile">
+                                <div class="bullet_icon01"  title="Peça disponível em Mobile">
                                     <img src="assets/icons/smartphone.svg" alt="">
                                 </div>
                                 <p>320x386px (peso máximo: 280kb)</p>
                             </li>
                             <li>
-                                <div title="Tipo de comercialização">
+                                <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/money.svg" alt="">
                                 </div>
                                 <p>Comercializado por CPM</p>
@@ -265,25 +375,25 @@
 
                         <ul class="bullets">
                             <li>
-                                <div title="Tipo de arquivo">
+                                <div class="bullet_icon01" title="Tipo de arquivo">
                                     <img src="assets/icons/file_type.svg" alt="">
                                 </div>
                                 <p>Peça em .jpeg, .png ou .gif (peso máximo: 150kb)</p>
                             </li>
                             <li>
-                                <div title="Peça disponível em Desktop">
+                                <div class="bullet_icon01" title="Peça disponível em Desktop">
                                     <img src="assets/icons/desktop.svg" alt="">
                                 </div>
                                 <p>970x250px, 300x250px, 728x90px, 300x600px, 160x600px</p>
                             </li>
                             <li>
-                                <div  title="Peça disponível em Mobile">
+                                <div class="bullet_icon01" title="Peça disponível em Mobile">
                                     <img src="assets/icons/smartphone.svg" alt="">
                                 </div>
                                 <p>320x480px, 320x50px, 300x250px</p>
                             </li>
                             <li>
-                                <div title="Tipo de comercialização">
+                                <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/money.svg" alt="">
                                 </div>
                                 <p>Comercializado por CPM</p>
@@ -344,7 +454,7 @@
                         <p>Para peças de vídeo, é altamente recomendável a utilização de filmes com cortes de 15s ou 30s.</p>
                     </div>
                     
-                    <div id="implementacao_clicktags">
+                    <!-- <div id="implementacao_clicktags">
                         <h2>Implementação de Clicktags e URLs de redirecionamento</h2>
 
                         <p>Em todas as campanhas é obrigatório o envio de ao menos uma URL de redirecionamento, que leva o usuário à landing page da campanha, após o clique. Essa URL pode ser parametrizada para identificação do volume de entrega no Google Analytics.</p>
@@ -375,7 +485,7 @@
                         </p>
 
                         <p>5. Salve o arquivo principal como index.html e envie todos os arquivos juntos em formato zip, sem subdiretórios.</p>
-                    </div>
+                    </div> -->
                     
                     <div id="praticas_vetadas">
                         <h2>Práticas vetadas</h2>
@@ -419,7 +529,7 @@
 
                         <ul>
                             <li>
-                                <p>Para comprimir PNGs e JPGs, recomendamos <a href="http://minifycode.com" target="_blank">Tiny PNG</a>;</p>
+                                <p>Para comprimir PNGs e JPGs, recomendamos <a href="https://tinypng.com/" target="_blank">Tiny PNG</a>;</p>
                             </li>
                             <li>
                                 <p>Para comprimir GIFs, recomendamos <a href="http://gifcompressor.com" target="_blank">GIF Compressor</a>;</p>
