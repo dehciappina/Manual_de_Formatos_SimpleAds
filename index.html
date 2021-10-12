@@ -16,12 +16,12 @@
     <header>
         <div class="hamb desktop_hidden">
             <div>
-                <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.65 15.42"><defs><style>.cls-1{fill:none;stroke:#3d53fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="cls-1" x1="1.5" y1="7.71" x2="16.15" y2="7.71"/><line class="cls-1" x1="1.5" y1="1.5" x2="16.15" y2="1.5"/><line class="cls-1" x1="1.5" y1="13.92" x2="16.15" y2="13.92"/></svg>
+                <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 17.65 15.42"><defs><style>.hambsvg{fill:none;stroke:#3d53fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:2.2px;}</style></defs><line class="hambsvg" x1="1.5" y1="7.71" x2="16.15" y2="7.71"/><line class="hambsvg" x1="1.5" y1="1.5" x2="16.15" y2="1.5"/><line class="hambsvg" x1="1.5" y1="13.92" x2="16.15" y2="13.92"/></svg>
             </div>
         </div>
 
         <a class="logo" href="https://simpleads.com.br/" target="_blank">
-            <img src="assets/logo_simpleads.png" alt="" draggable="false">
+            <img src="assets/logo_simpleads.svg" alt="" draggable="false">
         </a>
 
         <div class="mobile_hidden divisor1"></div>
@@ -52,17 +52,17 @@
         <div class="flex_row">
             <div class="menu">
                 <div class="close_menu desktop_hidden">
-                    <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.93 16.67"><defs><style>.svg07{fill:none;stroke:#3d53fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:3px;}</style></defs><line class="svg07" x1="3.77" y1="8.33" x2="18.43" y2="8.33"/><polyline class="svg07" points="8.33 14.54 2.12 8.33 8.33 2.12"/></svg>
+                    <svg id="Camada_1" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.93 16.67"><defs><style>.svg07{fill:none;stroke:#3d53fc;stroke-linecap:square;stroke-miterlimit:10;stroke-width:2.2px;}</style></defs><line class="svg07" x1="3.77" y1="8.33" x2="18.43" y2="8.33"/><polyline class="svg07" points="8.33 14.54 2.12 8.33 8.33 2.12"/></svg>
                 </div>
 
                 <div class="menu_in">
                     <a href="#body" id="home">
-                        <img src="assets/icons/home.svg" alt="">
+                        <img class="mobile_hidden" src="assets/icons/home.svg" alt="">
                         Início
                     </a>
 
                     <a class="specs_bt" href="#">
-                        <img src="assets/icons/info.svg" alt="">
+                        <img class="mobile_hidden" src="assets/icons/info.svg" alt="">
                         Especificações Gerais
                     </a>
 
@@ -91,7 +91,6 @@
                         <a href="#interscroller">Interscroller Rich Media</a>
                         <a href="#interscroller">Interscroller Video</a>
                         <a href="#interscroller">Interscroller Display</a>
-                        <a href="#">Edge</a>
                     </div>
 
                     <button type="button" class="collapsible clicked">
@@ -99,16 +98,16 @@
                         Mídia Programática
                     </button>
                     <div class="collapsible_content">
-                        <a href="#">Displays IAB</a>
+                        <a href="#formatos_facebook">Facebook Business</a>
+                        <a href="#formato_search">Search</a>
+                        <a href="#formatos_display_iab">Displays IAB</a>
                         <a href="#">Youtube Trueview</a>
                         <a href="#">Youtube Bumper</a>
                         <a href="#">Youtube Discovery</a>
                         <a href="#">Video</a>
-                        <a href="#">Social Media</a>
                         <a href="#">Twitch</a>
                         <a href="#">Áudio</a>
                         <a href="#">Native</a>
-                        <a href="#">Search</a>
                     </div>
                     
                     <button type="button" class="collapsible clicked">
@@ -139,6 +138,13 @@
             </div>
 
             <main>
+
+                <section class="intro_sec">
+
+
+                    
+                </section>
+
                 <section id="excroll_rm" class="formato_sec">
                     <article>
                         <h2>eXcroll Rich Media</h2>
@@ -152,24 +158,62 @@
                                 </div>
                                 <p>Anúncio em HTML5 (.zip)</p>
                             </li>
+
                             <li>
                                 <div class="bullet_icon01" title="Peça disponível em Desktop">
                                     <img src="assets/icons/desktop.svg" alt="">
                                 </div>
                                 <p>1100 x 594 pixels (peso máximo: 380kb)</p>
                             </li>
+
                             <li>
                                 <div class="bullet_icon01"  title="Peça disponível em Mobile">
                                     <img src="assets/icons/smartphone.svg" alt="">
                                 </div>
                                 <p>320 x 386 pixels (peso máximo: 280kb)</p>
                             </li>
+
                             <li>
                                 <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/money.svg" alt="">
                                 </div>
                                 <p>Comercializado por CPM</p>
                             </li>
+
+                            <div>
+                                <li>
+                                    <div class="bullet_icon01" title="Tipo de comercialização">
+                                        <img src="assets/icons/design.svg" alt="">
+                                    </div>
+                                        <p>Recomendações de design</p>
+                                </li>
+    
+                                <li>
+                                    <span class="text_bullet">
+                                        <ul>
+                                            <li><p>Enviar ativos da peça em alta resolução, separados por camadas em arquivo PSD.</p></li>
+                                        </ul>
+                                    </span>
+                                </li>
+                            </div>
+
+                            <div>
+                                <li>
+                                    <div class="bullet_icon01" title="Tipo de comercialização">
+                                        <img src="assets/icons/engine.svg" alt="">
+                                    </div>
+                                        <p>Requisitos técnicos</p>
+                                </li>
+
+                                <li>
+                                    <span class="text_bullet">
+                                        <ul>
+                                            <li><p>Fornecer URL de destino</p></li>
+                                        </ul>
+                                    </span>
+                                </li>
+                            </div>
+
                             <li>
                                 <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/info.svg" alt="">
@@ -178,6 +222,7 @@
                                     <span class="specs_bt">Prazos e boas práticas</span>
                                 </p>
                             </li>
+
                             <li>
                                 <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/clicktag.svg" alt="">
@@ -186,6 +231,7 @@
                                     <span class="clicktag_RM_bt">Implementação da click tag</span>
                                 </p>
                             </li>
+
                         </ul>
                     </article>
 
@@ -321,6 +367,40 @@
                                 <p>Comercializado por CPM</p>
                             </li>
 
+                            <div>
+                                <li>
+                                    <div class="bullet_icon01" title="Tipo de comercialização">
+                                        <img src="assets/icons/design.svg" alt="">
+                                    </div>
+                                        <p>Recomendações de design</p>
+                                </li>
+    
+                                <li>
+                                    <span class="text_bullet">
+                                        <ul>
+                                            <li><p>Enviar ativos da peça em alta resolução, separados por camadas em arquivo PSD.</p></li>
+                                        </ul>
+                                    </span>
+                                </li>
+                            </div>
+
+                            <div>
+                                <li>
+                                    <div class="bullet_icon01" title="Tipo de comercialização">
+                                        <img src="assets/icons/engine.svg" alt="">
+                                    </div>
+                                        <p>Requisitos técnicos</p>
+                                </li>
+
+                                <li>
+                                    <span class="text_bullet">
+                                        <ul>
+                                            <li><p>Fornecer URL de destino</p></li>
+                                        </ul>
+                                    </span>
+                                </li>
+                            </div>
+
                             <li>
                                 <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/info.svg" alt="">
@@ -337,7 +417,7 @@
                     </div>
                 </section>
                 
-                <section class="formato_sec">
+                <section id="formato_search" class="formato_sec">
                     <article>
                         <h2>Search Engine Ads</h2>
         
@@ -345,29 +425,47 @@
 
                         <ul class="bullets">
                             <li>
-                                <div class="bullet_icon01" title="Tipo de arquivo">
-                                    <img src="assets/icons/file_type.svg" alt="">
-                                </div>
-                                <p>Anúncio em HTML5 (.zip)</p>
-                            </li>
-                            <li>
-                                <div class="bullet_icon01" title="Peça disponível em Desktop">
-                                    <img src="assets/icons/desktop.svg" alt="">
-                                </div>
-                                <p>1100 x 594 pixels (peso máximo: 380kb)</p>
-                            </li>
-                            <li>
-                                <div class="bullet_icon01"  title="Peça disponível em Mobile">
-                                    <img src="assets/icons/smartphone.svg" alt="">
-                                </div>
-                                <p>320 x 386 pixels (peso máximo: 280kb)</p>
-                            </li>
-                            <li>
                                 <div class="bullet_icon01" title="Tipo de comercialização">
                                     <img src="assets/icons/money.svg" alt="">
                                 </div>
-                                <p>Comercializado por CPM</p>
+                                <p>Comercializado por CPC</p>
                             </li>
+
+                            <div>
+                                <li>
+                                    <div class="bullet_icon01" title="Tipo de comercialização">
+                                        <img src="assets/icons/text.svg" alt="">
+                                    </div>
+                                        <p>Recomendações de texto</p>
+                                </li>
+    
+                                <li>
+                                    <span class="text_bullet">
+                                        <ul>
+                                            <li><p>Até três títulos de 30 caracteres casa</p></li>
+                                            <li><p>Até duas descrições de 90 caracteres cada</p></li>
+                                            <li><p>Fornecer URL de visualização</p></li>
+                                        </ul>
+                                    </span>
+                                </li>
+                            </div>
+
+                            <div>
+                                <li>
+                                    <div class="bullet_icon01" title="Tipo de comercialização">
+                                        <img src="assets/icons/engine.svg" alt="">
+                                    </div>
+                                        <p>Requisitos técnicos</p>
+                                </li>
+    
+                                <li>
+                                    <span class="text_bullet">
+                                        <ul>
+                                            <li><p>Fornecer URL de destino</p></li>
+                                        </ul>
+                                    </span>
+                                </li>
+                            </div>
 
                             <li>
                                 <div class="bullet_icon01" title="Tipo de comercialização">
@@ -385,7 +483,7 @@
                     </div>
                 </section>
                 
-                <section class="formato_sec">
+                <section id="formatos_display_iab" class="formato_sec">
                     <article>
                         <h2>Display IAB</h2>
         
@@ -460,7 +558,7 @@
 
                     <div class="img_ctnr mobile_img">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 970 1320">
-                            <defs><style>.nadsi0asko-1{fill:#fff;}.nadsi0asko-2{font-size:30px;fill:#3d53fc;font-family:Gordita-Medium, Gordita;font-weight:600;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><rect class="nadsi0asko-1" x="670" y="450" width="300" height="600"/><text class="nadsi0asko-2" transform="translate(727.27 761.05)">300x600<tspan x="148.74" y="0">p</tspan><tspan x="168.36" y="0">x</tspan></text><rect class="nadsi0asko-1" y="180" width="970" height="250"/><rect class="nadsi0asko-1" x="325" y="450" width="320" height="480"/><rect class="nadsi0asko-1" y="450" width="300" height="250"/><rect class="nadsi0asko-1" y="720" width="160" height="600"/><rect class="nadsi0asko-1" width="320" height="50"/><rect class="nadsi0asko-1" y="70" width="728" height="90"/><rect class="nadsi0asko-1" x="180" y="720" width="120" height="600"/><text class="nadsi0asko-2" transform="translate(286.08 125.99)">728x90<tspan x="119.13" y="0">p</tspan><tspan x="138.75" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(81.03 35.11)">320x50<tspan x="121.23" y="0">p</tspan><tspan x="140.85" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(394.75 697.89)">320x480<tspan x="143.79" y="0">p</tspan><tspan x="163.41" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(396.59 315.61)"><tspan>9</tspan><tspan x="20.19" y="0">7</tspan><tspan x="38.28" y="0">0x250</tspan><tspan x="140.1" y="0">p</tspan><tspan x="159.72" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(59.57 587.36)">300x250<tspan x="144.15" y="0">p</tspan><tspan x="163.77" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(70 931.23) rotate(90)">160x600<tspan x="140.82" y="0">p</tspan><tspan x="160.44" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(227.84 931.65) rotate(90)">120x600<tspan x="139.98" y="0">p</tspan><tspan x="159.6" y="0">x</tspan></text></g></g>
+                            <defs><style>.nadsi0asko-1{fill:#fff;}.nadsi0asko-2{font-size:30px;fill:#3d53fc;font-family:Gordita-Bold, Gordita;font-weight:700;}</style></defs><g id="Camada_2" data-name="Camada 2"><g id="Camada_1-2" data-name="Camada 1"><rect class="nadsi0asko-1" x="670" y="450" width="300" height="600"/><text class="nadsi0asko-2" transform="translate(727.27 761.05)">300x600<tspan x="148.74" y="0">p</tspan><tspan x="168.36" y="0">x</tspan></text><rect class="nadsi0asko-1" y="180" width="970" height="250"/><rect class="nadsi0asko-1" x="325" y="450" width="320" height="480"/><rect class="nadsi0asko-1" y="450" width="300" height="250"/><rect class="nadsi0asko-1" y="720" width="160" height="600"/><rect class="nadsi0asko-1" width="320" height="50"/><rect class="nadsi0asko-1" y="70" width="728" height="90"/><rect class="nadsi0asko-1" x="180" y="720" width="120" height="600"/><text class="nadsi0asko-2" transform="translate(286.08 125.99)">728x90<tspan x="119.13" y="0">p</tspan><tspan x="138.75" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(81.03 35.11)">320x50<tspan x="121.23" y="0">p</tspan><tspan x="140.85" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(394.75 697.89)">320x480<tspan x="143.79" y="0">p</tspan><tspan x="163.41" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(396.59 315.61)"><tspan>9</tspan><tspan x="20.19" y="0">7</tspan><tspan x="38.28" y="0">0x250</tspan><tspan x="140.1" y="0">p</tspan><tspan x="159.72" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(59.57 587.36)">300x250<tspan x="144.15" y="0">p</tspan><tspan x="163.77" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(70 931.23) rotate(90)">160x600<tspan x="140.82" y="0">p</tspan><tspan x="160.44" y="0">x</tspan></text><text class="nadsi0asko-2" transform="translate(227.84 931.65) rotate(90)">120x600<tspan x="139.98" y="0">p</tspan><tspan x="159.6" y="0">x</tspan></text></g></g>
                             
                             <image y="180" width="970" height="250" xlink:href="assets/970x250.jpg" clip-path="url(#myCircle)" />
                             

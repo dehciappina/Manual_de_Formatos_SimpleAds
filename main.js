@@ -254,26 +254,26 @@ setTimeout(() => {
 
 ScrollReveal().reveal('main section article', {
 duration:1600,
-delay:10,
+delay:100,
 easing: 'ease',
 mobile: false
 }); ScrollReveal().reveal('main section article', {
 duration:1600,
-delay:10,
+delay:100,
 origin: 'bottom',
 easing: 'ease',
 });
 
 ScrollReveal().reveal('.img_ctnr', {
 duration:1600,
-delay:250,
+delay:200,
 easing: 'ease',
 distance: '1rem',
 origin: 'right',
 mobile: false
 }); ScrollReveal().reveal('.img_ctnr', {
 duration:2400,
-delay:100,
+delay:300,
 easing: 'ease',
 desktop: false
 });

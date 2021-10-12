@@ -62,6 +62,7 @@ body, button {
 :root {
     --c01: #434A7D;
     --c02: #3d53fc;
+    --c02-1:#051678;
     --c03: #eff1f6;
     --c04: #fd8820;
     --c05: #ee4b29;
@@ -210,7 +211,7 @@ header {
 }
 
 main {
-    padding: 5rem 0 0 0;
+    padding: clamp(3.8rem, 9vw, 5rem) 0 0 0;
     background: var(--c03);
     width:100%;
 } main h1, main h2 {
@@ -220,11 +221,20 @@ main {
     margin: 0 0 0.8rem 0;
     color: var(--c02);
     text-transform: uppercase;
-    background: -webkit-linear-gradient( 60deg, var(--c02) 38%, var(--c07) 130%);
+    background: -webkit-linear-gradient( 60deg, var(--c02) 38%, var(--c02-1) 130%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     user-select: none;
-} .formato_sec p {
+}
+
+.intro_sec {
+    min-height: 55vh;
+    background: linear-gradient(35deg, var(--c02) 38%, var(--c02-1) 124%);
+    box-shadow: inset 1rem -1rem 7rem -4rem white, 0 1.5rem 4rem -3rem var(--c02);
+}
+
+
+.formato_sec p {
     font-size: clamp(0.9rem, 4.5vw, 0.95rem);
     line-height: clamp(1.4rem, 4vw, 1.5rem);
     margin-bottom: 1rem;
@@ -237,9 +247,6 @@ main {
 } .formato_sec {
     display: flex;
     flex-direction: column;
-    padding: clamp(1rem, 5vw, 2rem) 0 clamp(1rem, 10vw, 3rem) 0;
-} .formato_sec:not(:first-child) {
-    padding: clamp(1rem, 15vw, 3rem) 0 clamp(1rem, 10vw, 3rem) 0;
 } .cta01{
     margin: 0 0 1.4rem;
     padding: 0.5rem 2rem;
@@ -250,7 +257,7 @@ main {
     font-size: clamp(0.9rem, 5vw, 1.1rem);
 } .formato_sec article {
     width: clamp(17rem, 85vw, 40rem);
-    margin: 0 auto;
+    margin: 4rem auto 1rem auto;
 } .formato_sec {
     border-bottom: 2px solid #DDF;
 } .formato_sec menu {
@@ -336,7 +343,7 @@ main {
     overflow: hidden;
 } .img_ctnr img, .img_ctnr svg {
     width: clamp(17rem, 91vw, 35rem);
-    margin: 1rem auto;
+    margin: 1rem auto 4rem auto;
     display: block;
     object-fit: contain;
 }
@@ -530,12 +537,17 @@ main {
   } .active > div {
     transform: rotate(90deg);
   } 
-  
-  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-  .active, .collapsible:hover {
-    /* background-color: transparent; */
+
+
+  .img_ctnr svg image {
+      opacity: 1;
+      transition:opacity 0.9s ease;
+  }   .img_ctnr svg image:hover {
+      transition:opacity 0.1s ease;
+      opacity: 0.1;
   }
   
+
   /* Style the collapsible content. Note: hidden by default */
   .collapsible_content {
     max-height: 0;
@@ -617,7 +629,7 @@ main {
     } .formato_sec article {
         width: 32%;
         min-width: 21rem;
-        margin: 0 3vw 0 calc(10vw - 4rem);
+        margin: 4rem 3vw 0 calc(10vw - 4rem);
     } .cta01{
         transition: filter 0.1s ease, transform 0.05s ease;
     } .cta01:hover {
@@ -634,10 +646,11 @@ main {
         object-position: left;
     } .img_ctnr img {
         width: clamp(17rem, 90vw, 55rem);
+        margin: 2rem 0;
     } .img_ctnr svg {
         width: clamp(17rem, 40vw, 34rem);
         height: clamp(15rem, 50vw, 47rem);
-        margin: 0 0 0 1rem;
+        margin: 2rem 0 2rem 1rem;
     } .img_ctnr {
         width: 62%;
     }
@@ -722,15 +735,6 @@ main {
     }
     .interscroller h2 {
         font-size: clamp(2.3rem, 3vw, 2.6rem);
-    }
-
-
-    .img_ctnr svg image {
-        opacity: 1;
-        transition:opacity 0.9s ease;
-    }   .img_ctnr svg image:hover {
-        transition:opacity 0.1s ease;
-        opacity: 0.1;
     }
    
 
