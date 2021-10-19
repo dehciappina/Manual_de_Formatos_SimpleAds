@@ -20,7 +20,7 @@ function checkFBSwitch(e) {
 
         setTimeout(() => {
             FBImagemSpecs.classList.add('switched')
-        }, 100);
+        }, 150);
 
         for (i=0;i<facebookSwitchBts.length;i++) {
             facebookSwitchBts[i].classList.remove('active_type')
@@ -38,7 +38,7 @@ function checkFBSwitch(e) {
 
         setTimeout(() => {
             FBVideoSpecs.classList.add('switched')
-        }, 100);
+        }, 150);
 
         for (i=0;i<facebookSwitchBts.length;i++) {
             facebookSwitchBts[i].classList.remove('active_type')
@@ -56,7 +56,7 @@ function checkFBSwitch(e) {
 
         setTimeout(() => {
             FBCarosselSpecs.classList.add('switched')
-        }, 100);
+        }, 150);
 
         for (i=0;i<facebookSwitchBts.length;i++) {
             facebookSwitchBts[i].classList.remove('active_type')

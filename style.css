@@ -55,6 +55,10 @@ body {
     scroll-behavior:smooth;
 }
 
+.sr .img_ctnr {
+    visibility: hidden;
+}
+
 body, button {
     font-family: 'Gordita', sans-serif;
 }
@@ -228,9 +232,8 @@ main {
 }
 
 .intro_sec {
-    min-height: 55vh;
-    background: linear-gradient(35deg, var(--c02) 38%, var(--c02-1) 124%);
-    box-shadow: inset 1rem -1rem 7rem -4rem white, 0 1.5rem 4rem -3rem var(--c02);
+    min-height: 45vh;
+    background: linear-gradient(#e8eaf5, #E3E6F1);
 }
 
 
@@ -275,10 +278,11 @@ main {
     justify-content: center;
     align-items: center;
     font-weight: 600;
-    color: var(--c08);
+    color: var(--c02);
     flex: 1;
-    transition: box-shadow 0.1s ease-out, color 0.3s ease, background-color 0.9s ease;
+    transition: box-shadow 0.15s ease-out, color 0.35s 0.1s ease, background-color 0.9s ease;
     box-shadow: inset 0 0 0 var(--c02);
+    user-select: none;
 } .formato_sec menu li:first-child {
     border-radius: 0.2rem 0 0 0.2rem;
 } .formato_sec menu li:last-child {
@@ -290,7 +294,7 @@ main {
     content:'';
     position:absolute;
 } .formato_sec menu li:hover {
-    transition: background-color 0.05s ease, box-shadow 0.1s ease-out, color 0.3s ease;
+    transition: background-color 0.05s ease, box-shadow 0.15s ease-out, color 0.35s 0.1s ease;
     background-color:white;
 } .formato_sec menu li:not(:last-child) {
     border-right: 1px solid #CDF;
@@ -303,7 +307,7 @@ main {
     color: var(--c08);
     font-weight: 500;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column;
     gap: 0rem 3rem;
     justify-content: stretch;
 } .bullets > li, .bullets > div {
@@ -312,7 +316,7 @@ main {
 } .bullets li {
     display: flex;
     margin-bottom: 0.5rem;
-    align-items: center;
+    align-items: baseline;
 } .bullets li a, .bullets .specs_bt, .bullets .clicktag_RM_bt {
     cursor: pointer;
     text-decoration: underline;
@@ -341,7 +345,7 @@ main {
 } .img_ctnr {
     width: 100%;
     overflow: hidden;
-} .img_ctnr img, .img_ctnr svg {
+} .img_ctnr > img, .img_ctnr svg {
     width: clamp(17rem, 91vw, 35rem);
     margin: 1rem auto 4rem auto;
     display: block;
@@ -484,11 +488,60 @@ main {
 }
 
 
+#interscroller_ctnr {
+    height: clamp(17rem, 170vw, 33rem);
+    width: clamp(17rem, 71vw, 30rem);
+    overflow: initial;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 1rem auto 4rem auto;
+} #interscroller_ctnr > img {
+    position: absolute;
+    width: unset;
+    height: clamp(17rem, 170vw, 34rem);
+    object-fit: contain;
+    margin: 0;
+    pointer-events: none;
+} .interscroller_prev {
+    width: clamp(15rem, 60vw, 16rem);
+    height: clamp(17rem, 170vw, 33rem);
+    background-color:var(--c03);
+    border-radius: 2rem;
+    overflow-y: auto;
+    padding-top: 2rem;
+    box-sizing: border-box;
+} .ghost_text {
+    margin: 0 clamp(0.2rem, 3vw, 1.5rem);
+    display: flex;
+    flex-flow: row wrap;
+} .interscroller_prev span {
+    height: clamp(0.4rem, 1vw, 0.5rem);
+    margin: clamp(0.2rem, 1vw, 0.3rem) 0.2rem;
+    background: #e2e2e2;
+    display: block;
+    flex: none;
+} .interscroller_prev article {
+    width: 13rem;
+    height: 21rem;
+    background: black;
+    margin: 1rem auto;
+} .interscroller_prev img {
+    width:100%;
+    width: 13rem;
+    height: 21rem;
+}
+
 .interscroller h2 {
     font-size: clamp(1rem, 9vw, 2.6rem);
     line-height: clamp(1rem, 9vw, 2.2rem);
 }
 
+
+.interscroller_prev::-webkit-scrollbar, .interscroller_prev article::-webkit-scrollbar {
+    display:none;
+}
 
 
 ::-webkit-scrollbar {
@@ -552,13 +605,13 @@ main {
   } .switcher_ctnr .bullets {
     opacity:0;
     visibility: hidden;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transform-origin: 20% center;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
   } .switcher_ctnr .bullets:not(.relative) {
     position: absolute;
   } .switcher_ctnr .switched {
     opacity:1;
     visibility: visible;
-    transition: opacity 0.7s ease, visibility 0.7s ease;
   }
   
 
@@ -605,45 +658,20 @@ main {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media (min-width:138vh) {
-
-    .desktop_hidden {
-        display:none;
-    } .mobile_hidden {
-        display:initial;
-    }
+@media (min-width:50vh) and (min-width:720px) {
     
-    main {
-        padding: 0;
-        overflow-x: hidden;
-    } .formato_sec {
+    .formato_sec {
         flex-direction: row;
         align-items: center;
         padding: 1rem 0 clamp(1rem, 10vw, 3rem) 0;
-    } .formato_sec article {
+    }
+    main {
+        padding: 0;
+        overflow-x: hidden;
+    } .formato_sec > article {
         width: 32%;
         min-width: 21rem;
-        margin: 4rem 3vw 0 calc(10vw - 4rem);
+        margin: 4rem 3vw 0 clamp(3rem, 10vw, 4rem);
     } .cta01{
         transition: filter 0.1s ease, transform 0.05s ease;
     } .cta01:hover {
@@ -653,13 +681,14 @@ main {
         transition: filter 0.1s ease, transform 0.02s ease;
         transform: scale(0.99);
     }
+    
+    
 
-    .img_ctnr img {
-        height: clamp(15rem, 130vw, 37rem);
+    .img_ctnr > img {
+        height: clamp(15rem, 130vw, 42rem);
+        width: clamp(17rem, 120vw, 60rem);
         margin: 0;
         object-position: left;
-    } .img_ctnr img {
-        width: clamp(17rem, 90vw, 55rem);
         margin: 2rem 0;
     } .img_ctnr svg {
         width: clamp(17rem, 40vw, 34rem);
@@ -669,6 +698,33 @@ main {
         width: 62%;
     }
 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width:150vh) and (min-width:1000px) {
+
+    .desktop_hidden {
+        display:none;
+    } .mobile_hidden {
+        display:initial;
+    }
     .bullet_icon01 {
         transition: transform 0.2s ease;
     } .bullets li:hover .bullet_icon01 {
@@ -754,9 +810,48 @@ main {
     .interscroller h2 {
         font-size: clamp(2.3rem, 3vw, 2.6rem);
     }
+
+
+    #interscroller_ctnr {
+        margin: 2rem 0;
+        height: clamp(17rem, 170vw, 36rem);
+        width: clamp(17rem, 71vw, 24rem);
+    } #interscroller_ctnr > img {
+        height: clamp(17rem, 170vw, 38rem);
+    } .interscroller_prev {
+        width: clamp(15rem, 60vw, 18rem);
+        height: clamp(17rem, 170vw, 37rem);
+    }
    
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

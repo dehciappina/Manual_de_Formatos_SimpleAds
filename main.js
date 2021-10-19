@@ -75,7 +75,7 @@ function togglespecs() {
     menuBg.style.opacity = 1;
     menuBg.style.visibility = 'visible';
     
-      if(!window.matchMedia("(min-width: 138vh)").matches) {
+      if(!window.matchMedia("(min-width: 150vh)").matches) {
       
         showingMenu = false;
         menu.style.transform = 'translateX(-100%)';
@@ -115,7 +115,7 @@ function toggleClickTagRM() {
 
 }
 
-if (!window.matchMedia("(min-width: 138vh)").matches) {
+if (!window.matchMedia("(min-width: 150vh)").matches) {
 
   for(i = 0; i < menuAnchors.length; i++) {
     menuAnchors[i].addEventListener('click', function() {
@@ -181,13 +181,38 @@ homeBt.addEventListener('click', function() {
 
   togglespecs()
   toggleClickTagRM()
-
   
-  if (!window.matchMedia("(min-width: 138vh)").matches) {
+  if (!window.matchMedia("(min-width: 150vh)").matches) {
     showingMenu = true;
     toggleMenu()
   }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+const ghostText = document.querySelectorAll('.ghost_text span')
+
+for(i=0;i<ghostText.length;i++) {
+  ghostText[i].style.width = Math.random() * (4 - 1) + 1 + 'rem'
+}
+
+const interscrollerPrev = document.querySelector('.interscroller_prev').offsetParent;
+const interscrollerAd = document.querySelector('.interscroller_prev img')
+
+interscrollerPrev.addEventListener('scroll', function(e) {
+  interscrollerAd.style.transform = 'translateY(' + e.offsetTop - interscrollerPrev.scrollTop + 'px)'
+})
+
+
 
 
 
@@ -246,10 +271,27 @@ setTimeout(() => {
 
 
 
+ScrollReveal().reveal('head', {});
 
-
-
-
+ScrollReveal().reveal('#interscroller_ctnr', {
+  afterReveal: function () {
+    
+    
+    setTimeout(() => {
+      document.querySelector('.interscroller_prev').scrollTo({
+        top: 350,
+        behavior: 'smooth'
+      })
+    }, 600);
+    
+    setTimeout(() => {
+      document.querySelector('.interscroller_prev').scrollTo({
+        top: 300,
+        behavior: 'smooth'
+      })
+    }, 1100);
+  }
+})
 
 
 ScrollReveal().reveal('main section article', {
