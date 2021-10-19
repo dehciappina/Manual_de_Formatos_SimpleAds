@@ -1,4 +1,29 @@
 
+function touchHandler(event) {
+	var touch = event.changedTouches[0];
+	var simulatedEvent = new MouseEvent({
+		touchstart: "mousedown",
+		touchmove: "mousemove",
+		touchend: "mouseup"
+	}[event.type], {
+		bubbles: true, cancelable: true, view: window, detail: 1,
+		screenX: touch.screenX, screenY: touch.screenY, clientX: touch.clientX, clientY: touch.clientY,
+		ctrlKey: false, altKey: false, shiftKey: false, metaKey: false, button: 0, relatedTarget: null
+	});
+	touch.target.dispatchEvent(simulatedEvent);
+}
+function init() {
+        // I suggest you be far more specific than "document"
+	document.addEventListener("touchstart", touchHandler, true);
+	document.addEventListener("touchmove", touchHandler, true);
+	document.addEventListener("touchend", touchHandler, true);
+	document.addEventListener("touchcancel", touchHandler, true);
+}
+
+init()
+
+
+
 const loading = document.querySelector('#loading')
 
 document.onreadystatechange = function () {
@@ -205,20 +230,48 @@ for(i=0;i<ghostText.length;i++) {
   ghostText[i].style.width = Math.random() * (4 - 1) + 1 + 'rem'
 }
 
-const interscrollerPrev = document.querySelector('.interscroller_prev').offsetParent;
+const interscrollerPrev = document.querySelector('.interscroller_prev');
 const interscrollerAd = document.querySelector('.interscroller_prev img')
 
-interscrollerPrev.addEventListener('scroll', function(e) {
-  interscrollerAd.style.transform = 'translateY(' + e.offsetTop - interscrollerPrev.scrollTop + 'px)'
-})
+interscrollerPrev.scrollTop = 100;
+interscrollerPrev.scrollLeft = 0;
+
+let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+const mouseDownHandler = function (e) {
+    pos = {
+        // The current scroll
+        left: interscrollerPrev.scrollLeft,
+        top: interscrollerPrev.scrollTop,
+        // Get the current mouse position
+        x: e.clientX,
+        y: e.clientY,
+    };
+
+    interscrollerPrev.addEventListener('mousemove', mouseMoveHandler);
+    interscrollerPrev.addEventListener('mouseup', mouseUpHandler);
+};
+
+interscrollerPrev.addEventListener('mouseover', mouseDownHandler);
 
 
+const mouseMoveHandler = function (e) {
+    // How far the mouse has been moved
+    const dx = e.clientX - pos.x;
+    const dy = e.clientY - pos.y;
 
+    // Scroll the element
+    interscrollerPrev.scrollTop = pos.top - dy;
+    interscrollerPrev.scrollLeft = pos.left - dx;
+};
 
+const mouseUpHandler = function () {
+  document.removeEventListener('mousemove', mouseMoveHandler);
+  document.removeEventListener('mouseup', mouseUpHandler);
 
-
-
-
+  interscrollerPrev.style.cursor = 'grab';
+  interscrollerPrev.style.removeProperty('user-select');
+};
 
 
 

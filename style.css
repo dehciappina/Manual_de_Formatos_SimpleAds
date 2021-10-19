@@ -497,6 +497,7 @@ main {
     align-items: center;
     position: relative;
     margin: 1rem auto 4rem auto;
+    filter: drop-shadow(0 5px 20px #DBE2E4);
 } #interscroller_ctnr > img {
     position: absolute;
     width: unset;
@@ -507,7 +508,7 @@ main {
 } .interscroller_prev {
     width: clamp(15rem, 60vw, 16rem);
     height: clamp(17rem, 170vw, 33rem);
-    background-color:var(--c03);
+    background-color: white;
     border-radius: 2rem;
     overflow-y: auto;
     padding-top: 2rem;
@@ -519,13 +520,14 @@ main {
 } .interscroller_prev span {
     height: clamp(0.4rem, 1vw, 0.5rem);
     margin: clamp(0.2rem, 1vw, 0.3rem) 0.2rem;
-    background: #e2e2e2;
+    background: var(--c06);
+    border-radius: 0.2rem;
     display: block;
     flex: none;
 } .interscroller_prev article {
     width: 13rem;
     height: 21rem;
-    background: black;
+    background: var(--c02);
     margin: 1rem auto;
 } .interscroller_prev img {
     width:100%;
@@ -821,6 +823,7 @@ main {
     } .interscroller_prev {
         width: clamp(15rem, 60vw, 18rem);
         height: clamp(17rem, 170vw, 37rem);
+        cursor: grabbing;
     }
    
 
