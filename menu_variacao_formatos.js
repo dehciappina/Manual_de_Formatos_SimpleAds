@@ -1,4 +1,4 @@
-const facebookSwitchBts = document.querySelectorAll('#formatos_facebook menu li')
+const facebookSwitchBts = document.querySelectorAll('#social_ads menu li')
 
 const FBImagemSpecs = document.querySelector('#facebook_imagem_specs')
 const FBVideoSpecs = document.querySelector('#facebook_video_specs')
@@ -56,6 +56,7 @@ function checkFBSwitch(e) {
 
         setTimeout(() => {
             FBCarosselSpecs.classList.add('switched')
+            
         }, 150);
 
         for (i=0;i<facebookSwitchBts.length;i++) {

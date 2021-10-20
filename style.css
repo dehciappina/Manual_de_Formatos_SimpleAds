@@ -268,7 +268,6 @@ main {
     flex-direction: row;
     list-style: none;
     padding: 0;
-    width: 80%;
 } .formato_sec menu li {
     font-size: 0.8rem;
     cursor: pointer;
@@ -513,7 +512,7 @@ main {
     overflow-y: auto;
     padding-top: 2rem;
     box-sizing: border-box;
-} .ghost_text {
+}.ghost_text {
     margin: 0 clamp(0.2rem, 3vw, 1.5rem);
     display: flex;
     flex-flow: row wrap;
@@ -536,8 +535,8 @@ main {
 }
 
 .interscroller h2 {
-    font-size: clamp(1rem, 9vw, 2.6rem);
-    line-height: clamp(1rem, 9vw, 2.2rem);
+    font-size: clamp(1.8rem, 9.5vw, 2.6rem);
+    line-height: clamp(1.9rem, 10vw, 2.7rem);
 }
 
 
@@ -662,18 +661,16 @@ main {
 
 @media (min-width:50vh) and (min-width:720px) {
     
-    .formato_sec {
+    .formato_sec:not(:first-of-type) {
+        padding: 5rem 0 clamp(1rem, 10vw, 3rem) 0;
+    } .formato_sec {
         flex-direction: row;
-        align-items: center;
-        padding: 1rem 0 clamp(1rem, 10vw, 3rem) 0;
+        padding: 2.5rem 0 clamp(1rem, 10vw, 3rem) 0;
     }
-    main {
-        padding: 0;
-        overflow-x: hidden;
-    } .formato_sec > article {
+    .formato_sec > article {
         width: 32%;
         min-width: 21rem;
-        margin: 4rem 3vw 0 clamp(3rem, 10vw, 4rem);
+        margin: 0 3vw 0 clamp(3rem, 10vw, 4rem);
     } .cta01{
         transition: filter 0.1s ease, transform 0.05s ease;
     } .cta01:hover {
@@ -691,7 +688,7 @@ main {
         width: clamp(17rem, 120vw, 60rem);
         margin: 0;
         object-position: left;
-        margin: 2rem 0;
+        object-fit: cover;
     } .img_ctnr svg {
         width: clamp(17rem, 40vw, 34rem);
         height: clamp(15rem, 50vw, 47rem);
@@ -700,6 +697,24 @@ main {
         width: 62%;
     }
 
+    
+    .interscroller h2 {
+        font-size: clamp(2.4rem, 2.8vw, 2.6rem);
+        line-height: clamp(2.4rem, 4.6vw, 2.8rem);
+    }
+
+
+    #interscroller_ctnr {
+        margin: 0 0 2rem 0;
+        height: clamp(17rem, 170vw, 36rem);
+        width: clamp(17rem, 71vw, 24rem);
+    } #interscroller_ctnr > img {
+        height: clamp(17rem, 170vw, 38rem);
+    } .interscroller_prev {
+        width: clamp(15rem, 60vw, 18rem);
+        height: clamp(17rem, 170vw, 37rem);
+        cursor: row-resize;
+    }
 }
 
 
@@ -721,6 +736,11 @@ main {
 
 
 @media (min-width:150vh) and (min-width:1000px) {
+    
+    main {
+        padding: 0;
+        overflow-x: hidden;
+    }
 
     .desktop_hidden {
         display:none;
@@ -809,23 +829,6 @@ main {
         background-color: var(--c03);
         color:var(--c02);
     }
-    .interscroller h2 {
-        font-size: clamp(2.3rem, 3vw, 2.6rem);
-    }
-
-
-    #interscroller_ctnr {
-        margin: 2rem 0;
-        height: clamp(17rem, 170vw, 36rem);
-        width: clamp(17rem, 71vw, 24rem);
-    } #interscroller_ctnr > img {
-        height: clamp(17rem, 170vw, 38rem);
-    } .interscroller_prev {
-        width: clamp(15rem, 60vw, 18rem);
-        height: clamp(17rem, 170vw, 37rem);
-        cursor: grabbing;
-    }
-   
 
 }
 
