@@ -224,54 +224,67 @@ homeBt.addEventListener('click', function() {
 
 
 
-const ghostText = document.querySelectorAll('.ghost_text span')
-
-for(i=0;i<ghostText.length;i++) {
-  ghostText[i].style.width = Math.random() * (4 - 1) + 1 + 'rem'
-}
-
-const interscrollerPrev = document.querySelector('.interscroller_prev');
-const interscrollerAd = document.querySelector('.interscroller_prev img')
-
-interscrollerPrev.scrollTop = 100;
-interscrollerPrev.scrollLeft = 0;
-
-let pos = { top: 0, left: 0, x: 0, y: 0 };
-
-const mouseDownHandler = function (e) {
-    pos = {
-        // The current scroll
-        left: interscrollerPrev.scrollLeft,
-        top: interscrollerPrev.scrollTop,
-        // Get the current mouse position
-        x: e.clientX,
-        y: e.clientY,
-    };
-
-    interscrollerPrev.addEventListener('mousemove', mouseMoveHandler);
-    interscrollerPrev.addEventListener('mouseup', mouseUpHandler);
-};
-
-interscrollerPrev.addEventListener('mouseover', mouseDownHandler);
 
 
-const mouseMoveHandler = function (e) {
-    // How far the mouse has been moved
-    const dx = e.clientX - pos.x;
-    const dy = e.clientY - pos.y;
 
-    // Scroll the element
-    interscrollerPrev.scrollTop = pos.top - dy;
-    interscrollerPrev.scrollLeft = pos.left - dx;
-};
 
-const mouseUpHandler = function () {
-  document.removeEventListener('mousemove', mouseMoveHandler);
-  document.removeEventListener('mouseup', mouseUpHandler);
 
-  interscrollerPrev.style.cursor = 'grab';
-  interscrollerPrev.style.removeProperty('user-select');
-};
+
+
+
+
+
+
+// LIVE INTERSCROLLER
+
+// const ghostText = document.querySelectorAll('.ghost_text span')
+
+// for(i=0;i<ghostText.length;i++) {
+//   ghostText[i].style.width = Math.random() * (4 - 1) + 1 + 'rem'
+// }
+
+// const interscrollerPrev = document.querySelector('.interscroller_prev');
+// const interscrollerAd = document.querySelector('.interscroller_prev img')
+
+// interscrollerPrev.scrollTop = 100;
+// interscrollerPrev.scrollLeft = 0;
+
+// let pos = { top: 0, left: 0, x: 0, y: 0 };
+
+// const mouseDownHandler = function (e) {
+//     pos = {
+//         // The current scroll
+//         left: interscrollerPrev.scrollLeft,
+//         top: interscrollerPrev.scrollTop,
+//         // Get the current mouse position
+//         x: e.clientX,
+//         y: e.clientY,
+//     };
+
+//     interscrollerPrev.addEventListener('mousemove', mouseMoveHandler);
+//     interscrollerPrev.addEventListener('mouseup', mouseUpHandler);
+// };
+
+// interscrollerPrev.addEventListener('mouseover', mouseDownHandler);
+
+
+// const mouseMoveHandler = function (e) {
+//     // How far the mouse has been moved
+//     const dx = e.clientX - pos.x;
+//     const dy = e.clientY - pos.y;
+
+//     // Scroll the element
+//     interscrollerPrev.scrollTop = pos.top - dy;
+//     interscrollerPrev.scrollLeft = pos.left - dx;
+// };
+
+// const mouseUpHandler = function () {
+//   document.removeEventListener('mousemove', mouseMoveHandler);
+//   document.removeEventListener('mouseup', mouseUpHandler);
+
+//   interscrollerPrev.style.cursor = 'grab';
+//   interscrollerPrev.style.removeProperty('user-select');
+// };
 
 
 
@@ -325,27 +338,6 @@ setTimeout(() => {
 
 
 ScrollReveal().reveal('head', {});
-
-ScrollReveal().reveal('#interscroller_ctnr', {
-  afterReveal: function () {
-    
-    
-    setTimeout(() => {
-      document.querySelector('.interscroller_prev').scrollTo({
-        top: 350,
-        behavior: 'smooth'
-      })
-    }, 600);
-    
-    setTimeout(() => {
-      document.querySelector('.interscroller_prev').scrollTo({
-        top: 300,
-        behavior: 'smooth'
-      })
-    }, 1100);
-  }
-})
-
 
 ScrollReveal().reveal('main section article', {
 duration:1600,
