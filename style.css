@@ -225,9 +225,10 @@ main {
     margin: 0 0 0.8rem 0;
     color: var(--c02);
     text-transform: uppercase;
-    background: -webkit-linear-gradient( 85deg, var(--c02) 38%, var(--c02-1) 130%);
+    /* background: -webkit-linear-gradient( 85deg, var(--c02) 38%, var(--c02-1) 130%); 
+    -webkit-text-fill-color: transparent;*/
+    background: var(--c02);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     user-select: none;
     display: inline;
 }
@@ -237,6 +238,16 @@ main {
     background: linear-gradient(#e8eaf5, #E3E6F1);
 }
 
+
+.formato_sec h3 {
+    font-size: 0.8rem;
+    color: var(--c02);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: clamp(0.1rem, 0.1vw, 0.2rem);
+    opacity: 0.4;
+    margin: 0 0 0.2rem 0;
+}
 
 .formato_sec p {
     font-size: clamp(0.9rem, 4.5vw, 0.95rem);
@@ -340,8 +351,8 @@ main {
     min-width: 12rem;
 } .bullets li {
     display: flex;
-    margin-bottom: 0.5rem;
-    align-items: baseline;
+    margin-bottom: 0.8rem;
+    align-items: center;
 } .bullets li a, .bullets .specs_bt, .bullets .clicktag_RM_bt {
     cursor: pointer;
     text-decoration: underline;
@@ -358,15 +369,15 @@ main {
 } .bullet_icon01 {
     background: white;
     margin: 0 0.9rem 0 0;
-    border-radius: 10rem;
-    width: 1.8rem;
-    height: 1.8rem;
+    border-radius: 0.2rem;
+    width: 1.6rem;
+    height: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: none;
-    border: 1px solid var(--c06);
     box-sizing: border-box;
+    border: 1px solid var(--c06);
 } .img_ctnr {
     width: 100%;
     overflow: hidden;
@@ -400,6 +411,23 @@ main {
     object-fit: cover;
     object-position: top;
     margin: 0 auto;
+}
+
+.highlight_bullet {
+} .highlight_bullet .bullet_icon01 {
+    background: var(--c02);
+    border: none;
+} .highlight_bullet .bullet_icon01 > img {
+    width: 55%;
+    height: 50%;
+} .highlight_bullet p {
+    background: var(--c02);
+    color: white;
+    border-radius: 0.2rem;
+    padding: 0 0.8rem;
+    position: relative;
+    right: 0.4rem;
+    line-height: 1.6rem;
 }
 
 .dooh_ctnr {
@@ -740,6 +768,7 @@ main {
     .formato_sec > article {
         width: 30%;
         min-width: 21rem;
+        max-width: 23rem;
         margin: 0 0 0 clamp(2rem, calc(15vw - 6rem), 4rem);
     } .cta01{
         transition: filter 0.1s ease, transform 0.05s ease;
@@ -789,7 +818,7 @@ main {
 
 
     .smartphone_ctnr {
-        margin: 0 0 2rem 3vw;
+        margin: 0 0 2rem 5vw;
     } .smartphone_ctnr > img {
         height: 100%;
         width: clamp(17rem, 38vw, 18rem);
@@ -906,9 +935,6 @@ main {
         width: 75%;
     } .specs div {
         padding: 6rem 0 0 0;
-    } .excroll_clicktag_section div {
-        padding: 1rem 0 0 0;
-        
     }
     
     .header_anchors {
@@ -916,7 +942,7 @@ main {
         display: flex;
         align-items: center;
         width: clamp(23rem, 35vw, 27rem);
-        justify-content: space-between;
+        /* justify-content: space-between; */
         color: var(--c08);
         font-size: clamp(0.9rem, 4.5vw, 1rem);
         font-weight: 500;
@@ -926,6 +952,7 @@ main {
         align-items: center;
         padding: 0 1rem;
         margin-left: calc(-1.6rem);
+        margin-right: 1rem;
         cursor: pointer;
     } .header_anchors span {
         padding: 0.3rem 0.6rem;
