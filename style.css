@@ -259,7 +259,7 @@ main {
     color: var(--c01);
     border-bottom: 2px solid var(--c06);
     padding-bottom: 1rem;
-    margin-top: 1rem;
+    margin-top: 0.6rem;
 } .formato_sec {
     display: flex;
     flex-direction: column;
@@ -272,8 +272,10 @@ main {
     color: var(--c03);
     font-size: clamp(0.9rem, 5vw, 1.1rem);
 } .formato_sec article {
-    width: clamp(17rem, 85vw, 40rem);
-    margin: 4rem auto 1rem auto;
+    width: clamp(17rem, 85vw, 24rem);
+    margin: 3rem auto 1rem auto;
+} .formato_sec:first-of-type article {
+    margin: 10vw auto 1rem auto;
 } .formato_sec {
     border-bottom: 2px solid #DDF;
 } .formato_sec menu {
@@ -320,7 +322,7 @@ main {
     margin: 0 auto 2rem auto;
     border: 2px solid var(--c06);
     color: var(--c02);
-    padding: 0.4rem 0;
+    line-height: 2.5rem;
     border-radius: 0.2rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -377,7 +379,6 @@ main {
     align-items: center;
     flex: none;
     box-sizing: border-box;
-    border: 1px solid var(--c06);
 } .img_ctnr {
     width: 100%;
     overflow: hidden;
@@ -419,7 +420,7 @@ main {
     border: none;
 } .highlight_bullet .bullet_icon01 > img {
     width: 55%;
-    height: 50%;
+    height: 45%;
 } .highlight_bullet p {
     background: var(--c02);
     color: white;
@@ -765,7 +766,7 @@ main {
     } .formato_sec:first-of-type {
         padding: 3rem 0 clamp(1rem, 10vw, 3rem) 0;
     }
-    .formato_sec > article {
+    .formato_sec > article, .formato_sec:first-of-type article {
         width: 30%;
         min-width: 21rem;
         max-width: 23rem;
@@ -809,6 +810,7 @@ main {
         box-sizing: border-box;
         text-align: center;
         z-index: 2;
+        line-height: 1rem;
     }
     
     .interscroller h2 {
