@@ -209,7 +209,7 @@ header {
     width: 0.75rem;
     height: 0.7rem;
 } .menu_in > a, .collapsible {
-    border: 2px solid var(--c06);
+    border: 1px solid var(--c06);
     transition: background-color 0.3s ease;
     background-color:transparent;
 }
@@ -324,22 +324,23 @@ main {
 .live_demo {
     display: block;
     margin: 0 auto 2rem auto;
-    border: 2px solid var(--c06);
     color: var(--c02);
     line-height: 2.5rem;
     border-radius: 0.15rem;
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.8rem;
-    width: 80%;
+    width: 80vw;
     font-weight: 500;
     text-align: center;
-    background-color:transparent;
-    transition: background-color 0.6s ease, border-color 0.6s ease;
-} .live_demo:hover {
     background-color:white;
-    transition: background-color 0.05s ease, border-color 0.05s ease;
-    border-color:transparent;
+} .smartphone_ctnr .live_demo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0;
+    transform: translateY(160%);
 }
 
 .bullets {
@@ -584,8 +585,7 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 1rem auto 4rem auto;
-    filter: drop-shadow(0 5px 20px #DBE2E4);
+    margin: 1rem auto 7rem auto;
     height: clamp(17rem, 170vw, 34rem);
     width: clamp(17rem, 38vw, 18rem);
 } .smartphone_ctnr > img {
@@ -672,6 +672,7 @@ main {
     align-self: end;
   } .collapsible_content a {
     background: var(--c03);
+    padding: 0.6rem 1.5rem 0.6rem 1.3rem;
   }
 
   ::-moz-selection { /* Code for Firefox */
@@ -732,7 +733,7 @@ main {
 @media (min-width:50vh) and (min-width:720px) {
     
     .formato_sec {
-        padding: 5rem 0 clamp(1rem, 10vw, 3rem) 0;
+        padding: 4rem 0 clamp(1rem, 10vw, 3rem) 0;
         flex-direction: row;
         position:relative;
     } .formato_sec:first-of-type {
@@ -819,6 +820,7 @@ main {
         left: 0;
         bottom: 0;
         height: 100%;
+        object-position: left;
     } .dooh_ctnr img {
         width: clamp(14rem, 69vw, 24rem);
         object-position: bottom left;
@@ -829,6 +831,10 @@ main {
         -webkit-mask-image: linear-gradient(90deg, transparent, white 62%);
     } .desktop_right img {
         transform: translateX(calc(-58rem + 55vw));
+    }
+    
+    .menu_in > a, .collapsible {
+        border:2px solid var(--c06);
     }
 }
 
@@ -937,6 +943,11 @@ main {
     }
     .desktop_right img {
         transform: translateX(calc(-70rem + 55vw));
+    }
+
+    .smartphone_ctnr .live_demo {
+        right: 4rem;
+        left: 3rem;
     }
 }
 
