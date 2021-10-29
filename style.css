@@ -156,7 +156,7 @@ header {
     justify-content: right;
     flex-direction: column;
     align-items: self-end;
-    overflow: auto;
+    overflow-y: scroll;
     border-left: 0.3rem solid var(--c02);
     z-index: 7;
 } .menu_in {
@@ -730,7 +730,7 @@ main {
 }
 
 .tooltip {
-    background-image: url('assets/icons/info.svg');
+    background-image: url('assets/icons/tooltip.svg');
     width: 0.7rem;
     height: 0.7rem;
     display: inline-block;

@@ -234,9 +234,7 @@ const handleClick = function (event) {
 
   event.target.classList.add("active_type")
 
-  var itemsAsides = Array.from(event.target.parentNode.parentNode.getElementsByTagName("ul"))
-
-  itemsAsides = itemsAsides.filter(aside => aside.parentNode.tagName == "ARTICLE");;
+  const itemsAsides = Array.from(event.target.parentNode.parentNode.getElementsByTagName("ul"))
 
   itemsAsides.map(aside => aside.classList.add("hidden_spec"))
 
