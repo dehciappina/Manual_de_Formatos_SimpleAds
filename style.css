@@ -166,6 +166,7 @@ header {
     padding: 1rem 0 0 1rem;
     box-sizing: border-box;
     border-top: 2px solid var(--c06);
+    padding: 1rem 0 8rem 0;
 } .menu span {
     font-size: 0.75rem;
     font-weight: 700;
@@ -234,7 +235,6 @@ main {
     -webkit-text-fill-color: transparent;*/
     background: var(--c02);
     -webkit-background-clip: text;
-    user-select: none;
     display: inline;
 }
 
@@ -398,42 +398,44 @@ main {
     margin: 1rem auto 2rem auto;
     display: block;
     object-fit: contain;
-}  .desktop_video {
-    width: clamp(14.5rem, 74vw, 28rem);
+} .desktop_mockup_content {
+    position: absolute;
     display: block;
-    margin: 0 auto 7rem auto;
+    margin: 0 auto;
     right: 0;
-    left: clamp(1.2rem, 5vw, 20rem);
-    top: clamp(1.7rem, 7.5vw, 2.2rem);
+} .mobile_mockup_content {
     position: absolute;
-} .mobile_video {
-    position: absolute;
-    width: clamp(2rem, 19vw, 7.1rem);
-    right: clamp(11rem, 61vw, 23.5rem);
     left: 0;
-    top: clamp(2rem, 22vw, 7.5rem);
     border-radius: 0.5rem;
-    height: clamp(2rem, 40vw, 15rem);
     object-fit: cover;
     object-position: top;
     margin: 0 auto;
+} .desktop_mockup_content.default {
+    width: clamp(14.5rem, 74vw, 28rem);
+    left: clamp(1.2rem, 5vw, 20rem);
+    top: clamp(1.7rem, 7.5vw, 2.2rem);
+} .mobile_mockup_content.default {
+    width: clamp(2rem, 19vw, 7.1rem);
+    right: clamp(11rem, 61vw, 23.5rem);
+    top: clamp(2rem, 22vw, 7.5rem);
+    height: clamp(2rem, 40vw, 15rem);
 }
 
 .highlight_bullet {
 } .highlight_bullet .bullet_icon01 {
     background: var(--c02);
-    border: none;
+    border: 1px solid var(--c02);
+    box-sizing: content-box;
 } .highlight_bullet .bullet_icon01 > img {
     width: 55%;
     height: 45%;
 } .highlight_bullet p {
     color: var(--c02);
     border-radius: 0.15rem;
-    padding: 0 0.8rem;
-    position: relative;
-    right: 0.4rem;
+    padding: 0 0.8rem 0 1rem;
     line-height: 1.6rem;
     border: 1px solid var(--c02);
+    transform: translateX(-1.2rem);
 }
 
 .dooh_ctnr {
@@ -448,7 +450,7 @@ main {
 } .text_bullet ul {
     padding-left: 2.8rem;
 } .text_bullet li {
-    opacity: 0.8;
+    color:#7d86ca;
     margin: -0.5rem 0 0 0;
 } .text_bullet ul li:not(:last-child) {
     margin: -0.5rem 0 0.8rem 0;
@@ -511,7 +513,9 @@ main {
     border-radius: 1rem;
 }
 
+
 .menu_footer {
+    display: block;
     font-size: 0.9rem;
     line-height: 3rem;
     position: sticky;
@@ -519,9 +523,7 @@ main {
     width: 100%;
     background: white;
     flex: none;
-    margin: 10rem 0 0 0;
     box-shadow: 0 -2rem 2rem var(--c03);
-    display: flex;
     justify-content: end;
     align-items: center;
     color: var(--c08);
@@ -529,8 +531,15 @@ main {
     text-transform: uppercase;
     letter-spacing: 4px;
     height: 5rem;
-    gap: 1rem;
-    padding: 0 clamp(2rem, 10vw, 2.2rem) 0 0;
+    /* padding: 0 clamp(2rem, 10vw, 2.2rem) 0 0; */
+} .menu_footer > div {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin: 0 auto;
+    gap: 0 1rem;
 } .menu_footer a {
     width: 2.2rem;
     height: 2.2rem;
@@ -720,6 +729,52 @@ main {
     line-height: clamp(1.9rem, 10vw, 2.7rem);
 }
 
+.tooltip {
+    background-image: url('assets/icons/info.svg');
+    width: 0.7rem;
+    height: 0.7rem;
+    display: inline-block;
+    padding: 0 0.3rem 0 0rem;
+    cursor: help;
+    transition: transform 0.15s ease;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    transform: translateY(-0.1rem);
+} .tooltip::after {
+    content: '';
+    position: absolute;
+    width: 12rem;
+    background: white;
+    padding: 0.6rem 0.9rem;
+    bottom: 1rem;
+    border: 3px solid var(--c03);
+    border-radius: 0.2rem;
+    transform: translate(-50%, 0.1rem);
+    font-weight: 600;
+    line-height: 1rem;
+    text-align: center;
+    transition: transform 0.15s ease, opacity 0.15s ease, visibility 0.15s ease;
+    opacity: 0;
+    visibility: hidden;
+    letter-spacing: 0.2px;
+    color: var(--c08);
+    box-shadow: 0 -0.1rem 1rem #ccf;
+} .tooltip:hover::after {
+    transform: translate(-50%, -0.1rem);
+    opacity: 1;
+    visibility: visible;
+    transition: transform 0.15s 0.2s ease, opacity 0.15s 0.2s ease, visibility 0.15s 0.2s ease;
+}
+
+
+.tooltip_cta::after {
+    content:'Call to action ou CTA é uma chamada para ação, geralmente em formato de botão com um texto do tipo “Clique aqui e saiba mais”'
+}
+
+.hidden_spec {
+    display:none;
+}
 
 
 
@@ -727,10 +782,7 @@ main {
 
 
 
-
-
-
-@media (min-width:50vh) and (min-width:720px) {
+@media (min-width:50vh) and (min-width:720px){
     
     .formato_sec {
         padding: 4rem 0 clamp(1rem, 10vw, 3rem) 0;
@@ -799,17 +851,19 @@ main {
         width: clamp(17rem, 38vw, 18rem);
     }
 
-    .desktop_video {
+    .desktop_mockup_content {
+        margin:unset;
+    } .mobile_mockup_content {
+        border-radius: 1.5rem;
+    } .desktop_mockup_content.default {
         width: clamp(14.5rem, 96vw, 48rem);
         left: 8rem;
         top: 2rem;
-        margin:unset;
-    } .mobile_video {
+    } .mobile_mockup_content.default {
         width: clamp(11rem, 24vw, 12rem);
         left: clamp(3.5rem, 6vw, 3.8rem);
-        right: unset;
         top: clamp(5rem, 22vw, 11rem);
-        border-radius: 1.5rem;
+        right: unset;
         height: clamp(24rem, 52vw, 26rem);
     }
 
@@ -856,7 +910,7 @@ main {
 
 
 
-@media (min-width:150vh) and (min-width:1000px) {
+@media (orientation: landscape) and (min-width:1100px)  {
 
     main {
         padding: 0;
@@ -877,6 +931,7 @@ main {
         height: 100vh;
         width: clamp(19rem, 24vw, 20.5rem);
         flex: none;
+        justify-content: space-between;
         transition:none;
         padding-top: 0;
     }  .menu_in {
