@@ -1,4 +1,5 @@
 #loading {
+    pointer-events: none;
     position: fixed;
     top: 0;
     right: 0;
@@ -16,6 +17,12 @@
     font-family: Gordita;
     src: url('assets/Gordita-Light.otf');
     font-weight: 100 200;
+}
+
+@font-face {
+    font-family: Gordita;
+    src: url('assets/Gordita-MediumItalic.otf');
+    font-style: italic;
 }
 
 @font-face {
@@ -182,6 +189,7 @@ header {
     background: unset;
     font-weight: 500;
     border-radius: 0.15rem;
+    cursor: pointer;
 } .menu a {
     transition: background-color 0.6s ease, color 0.6s ease;
 } .menu a:hover, .collapsible:hover {
@@ -358,7 +366,7 @@ main {
     min-width: 12rem;
 } .bullets li {
     display: flex;
-    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
     align-items: center;
 } .bullets li a, .bullets .specs_bt, .bullets .clicktag_RM_bt {
     cursor: pointer;
@@ -367,12 +375,12 @@ main {
     color:var(--c02);
 } .bullets p {
     font-size: clamp(0.7rem, 3.5vw, 0.8rem);
-    letter-spacing: 0.6px;
+    letter-spacing: 0.4px;
     margin-bottom: 0;
     line-height: clamp(0.7rem, 4.5vw, 1.1rem);
 } .bullets img {
-    width: 0.85rem;
-    height: 0.85rem;
+    width: 0.7rem;
+    height: 0.7rem;
 } .bullet_icon01 {
     margin: 0 0.9rem 0 0;
     border-radius: 0.15rem;
@@ -439,10 +447,43 @@ main {
 }
 
 .dooh_ctnr {
-
+    min-height: 37rem;
 } .dooh_ctnr img {
-    width: clamp(14rem, 62vw, 17rem);
-    margin: 2rem auto 0 auto;
+    width: clamp(14rem, 65vw, 17rem);
+    height: clamp(17rem, 170vw, 30rem);
+    margin: 2rem auto 4rem auto;
+    /* mix-blend-mode: hard-light; */
+    opacity: 0.85;
+    /* position: absolute; */
+    transition: transform 1s ease, opacity 1s;
+} .dooh_ctnr img:first-of-type {
+    animation: dooh_switch 10s ease-in-out infinite alternate;
+    position: absolute;
+} .dooh_ctnr img:last-of-type {
+    animation: dooh_switch 10s ease-in-out infinite alternate-reverse;
+} .dooh_ctnr video {
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  bottom:0;
+  /* height: clamp(17rem, 170vw, 30rem);
+  margin-bottom: 2rem; */
+}
+
+@keyframes dooh_switch {
+    0% {
+        opacity:0.85;
+        transform: scale(1);
+    } 40% {
+        opacity: 0.85;
+        transform: scale(1);
+    } 60% {
+        opacity: 0;
+        transform: scale(0.99);
+    } 100% {
+        opacity: 0;
+        transform: scale(0.99);
+    }
 }
 
 .text_bullet {
@@ -450,10 +491,12 @@ main {
 } .text_bullet ul {
     padding-left: 2.8rem;
 } .text_bullet li {
-    color:#7d86ca;
+    color: #7d86ca;
     margin: -0.5rem 0 0 0;
+    padding: 0;
 } .text_bullet ul li:not(:last-child) {
-    margin: -0.5rem 0 0.8rem 0;
+    margin: -0.5rem 0 0 0;
+    padding: 0 0 0.8rem 0;
 }
 
 
@@ -638,9 +681,9 @@ main {
     transition: transform 0.15s ease-out, border-color 1s ease;
     width: 0;
     height: 0;
-    border-top: 0.25rem solid transparent;
-    border-bottom: 0.25rem solid transparent;
-    border-left: 0.4rem solid var(--c08);
+    border-top: 0.2rem solid transparent;
+    border-bottom: 0.2rem solid transparent;
+    border-left: 0.35rem solid var(--c08);
   } .active > div {
     transform: rotate(90deg);
   } 
@@ -677,11 +720,11 @@ main {
     flex: none;
     display: flex;
     flex-direction: column;
-    width: 94%;
+    width: 92%;
     align-self: end;
   } .collapsible_content a {
     background: var(--c03);
-    padding: 0.6rem 1.5rem 0.6rem 1.3rem;
+    padding: 0.6rem 1.5rem 0.6rem 0.9rem;
   }
 
   ::-moz-selection { /* Code for Firefox */
@@ -704,14 +747,6 @@ main {
 
 
 
-  .dooh_ctnr video {
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-    bottom:0;
-} .dooh_ctnr img {
-    
-}
 
 .interscroller_prev article {
     width: 13rem;
@@ -731,16 +766,16 @@ main {
 
 .tooltip {
     background-image: url('assets/icons/tooltip.svg');
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 0.6rem;
+    height: 0.6rem;
     display: inline-block;
-    padding: 0 0.3rem 0 0rem;
+    padding: 0 0.2rem 0 0;
     cursor: help;
-    transition: transform 0.15s ease;
     position: relative;
     background-repeat: no-repeat;
-    background-position: bottom;
-    transform: translateY(-0.1rem);
+    background-position: bottom left;
+    transform: translateY(-0.2rem);
+    margin-left: 0.1rem;
 } .tooltip::after {
     content: '';
     position: absolute;
@@ -754,7 +789,7 @@ main {
     font-weight: 600;
     line-height: 1rem;
     text-align: center;
-    transition: transform 0.15s ease, opacity 0.15s ease, visibility 0.15s ease;
+    transition: transform 0.15s 0.1s ease, opacity 0.15s 0.1s ease, visibility 0.15s 0.1s ease;
     opacity: 0;
     visibility: hidden;
     letter-spacing: 0.2px;
@@ -764,7 +799,7 @@ main {
     transform: translate(-50%, -0.1rem);
     opacity: 1;
     visibility: visible;
-    transition: transform 0.15s 0.2s ease, opacity 0.15s 0.2s ease, visibility 0.15s 0.2s ease;
+    transition: transform 0.15s 0.3s ease, opacity 0.15s 0.3s ease, visibility 0.15s 0.3s ease;
 }
 
 
@@ -775,6 +810,26 @@ main {
 .hidden_spec {
     display:none;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -876,9 +931,10 @@ main {
         height: 100%;
         object-position: left;
     } .dooh_ctnr img {
-        width: clamp(14rem, 69vw, 24rem);
-        object-position: bottom left;
+        width: unset;
+        object-position: top left;
         margin: 0 0 0 5vw;
+        max-height: 36rem;
     }
 
     .desktop_right {
@@ -1003,6 +1059,14 @@ main {
     .smartphone_ctnr .live_demo {
         right: 4rem;
         left: 3rem;
+    }
+
+    .bullet_icon01 {
+        transition:border-color 0.5s ease;
+    }
+     .bullets > *:hover .bullet_icon01 {
+        transition:border-color 0.03s ease;
+        border-color: #A8AAFF;
     }
 }
 
