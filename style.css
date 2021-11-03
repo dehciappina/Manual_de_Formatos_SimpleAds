@@ -109,7 +109,7 @@ header {
     width: 100%;
 }
 
-.mobile_hidden {
+.mobile_hidden, .img_ctnr.mobile_hidden {
     display:none;
 }
 
@@ -167,7 +167,7 @@ header {
     border-left: 0.3rem solid var(--c02);
     z-index: 7;
 } .menu_in {
-    width: clamp(14rem, 72vw, 19rem);
+    width: clamp(17rem, 22vw, 19rem);
     display: flex;
     flex-direction: column;
     padding: 1rem 0 0 1rem;
@@ -182,7 +182,7 @@ header {
     margin: 1rem 0 0.6rem 0;
 } .menu_in a, .collapsible {
     font-size: clamp(0.8rem, 3.5vw, 1rem);
-    padding: 0.6rem 1.5rem 0.6rem 0.6rem;
+    padding: 0 1.5rem 0 0.6rem;
     color: var(--c08);
     letter-spacing: 0.6px;
     margin: 0.2rem 0 0.2rem 0;
@@ -190,6 +190,7 @@ header {
     font-weight: 500;
     border-radius: 0.15rem;
     cursor: pointer;
+    line-height: 2.4rem;
 } .menu a {
     transition: background-color 0.6s ease, color 0.6s ease;
 } .menu a:hover, .collapsible:hover {
@@ -197,7 +198,7 @@ header {
     transition: background-color 0s ease, color 0s ease;
     color:var(--c02);
 } .collapsible:hover div {
-    border-left: 0.4rem solid var(--c02);
+    border-left: 0.35rem solid var(--c02);
     transition: transform 0.15s ease-out, border-color 0.05s ease;
 } .close_menu {
     position: sticky;
@@ -361,6 +362,7 @@ main {
     flex-flow: column;
     gap: 0rem 3rem;
     justify-content: stretch;
+    width: 88%;
 } .bullets > li, .bullets > div {
     flex: 1;
     min-width: 12rem;
@@ -392,16 +394,19 @@ main {
     flex: none;
     box-sizing: border-box;
     border: 1px solid #E7E7F9;
-} .img_ctnr {
+}
+
+
+.img_ctnr {
     width: 100%;
     overflow: hidden;
     position: relative;
-} .img_ctnr > img {
+} .mockup_img {
     left: 0;
     right: 0;
     position: relative;
     z-index: 2;
-} .img_ctnr > img, .img_ctnr svg {
+} .mockup_img, .img_ctnr svg {
     width: clamp(17rem, 91vw, 35rem);
     margin: 1rem auto 2rem auto;
     display: block;
@@ -418,15 +423,15 @@ main {
     object-fit: cover;
     object-position: top;
     margin: 0 auto;
-} .desktop_mockup_content.default {
+} .desktop_mockup_content.default, .desktop_mockup_content.right_desktop {
     width: clamp(14.5rem, 74vw, 28rem);
     left: clamp(1.2rem, 5vw, 20rem);
     top: clamp(1.7rem, 7.5vw, 2.2rem);
-} .mobile_mockup_content.default {
+} .mobile_mockup_content.default, .mobile_mockup_content.right_mobile {
     width: clamp(2rem, 19vw, 7.1rem);
     right: clamp(11rem, 61vw, 23.5rem);
-    top: clamp(2rem, 22vw, 7.5rem);
-    height: clamp(2rem, 40vw, 15rem);
+    top: clamp(2rem, 21vw, 7.5rem);
+    height: clamp(2rem, 39vw, 15rem);
 }
 
 .highlight_bullet {
@@ -724,7 +729,7 @@ main {
     align-self: end;
   } .collapsible_content a {
     background: var(--c03);
-    padding: 0.6rem 1.5rem 0.6rem 0.9rem;
+    padding: 0 1.5rem 0 0.9rem;
   }
 
   ::-moz-selection { /* Code for Firefox */
@@ -863,14 +868,17 @@ main {
     
     
 
-    .img_ctnr > img {
-        height: clamp(15rem, 130vw, 42rem);
-        width: clamp(17rem, 120vw, 60rem);
+    .mockup_img {
+        /* height: clamp(15rem, 130vw, 42rem); */
+        width: 60rem;
         margin: 0;
         object-fit: contain;
         object-position: top left;
         left:unset;
         right:unset;
+        position: absolute;
+    } .img_ctnr {
+        min-height: 40rem;
     } .img_ctnr svg {
         width: clamp(17rem, 40vw, 34rem);
         height: clamp(15rem, 50vw, 47rem);
@@ -911,15 +919,15 @@ main {
     } .mobile_mockup_content {
         border-radius: 1.5rem;
     } .desktop_mockup_content.default {
-        width: clamp(14.5rem, 96vw, 48rem);
+        width: 48rem;
         left: 8rem;
-        top: 2rem;
+        top: 2.2rem;
     } .mobile_mockup_content.default {
-        width: clamp(11rem, 24vw, 12rem);
-        left: clamp(3.5rem, 6vw, 3.8rem);
-        top: clamp(5rem, 22vw, 11rem);
+        width: 12rem;
+        left: 3.8rem;
+        top: 11.3rem;
         right: unset;
-        height: clamp(24rem, 52vw, 26rem);
+        height: 25.8rem;
     }
 
 
@@ -930,21 +938,45 @@ main {
         bottom: 0;
         height: 100%;
         object-position: left;
+        z-index: -1;
     } .dooh_ctnr img {
         width: unset;
-        object-position: top left;
+        height: 36rem;
         margin: 0 0 0 5vw;
-        max-height: 36rem;
     }
 
-    .desktop_right {
-        -webkit-mask-image: linear-gradient(90deg, transparent, white 62%);
-    } .desktop_right img {
-        transform: translateX(calc(-58rem + 55vw));
+    .right_side01 {
+        -webkit-mask-image: linear-gradient(90deg, transparent 10%, white 62%);
+    } .right_side01 .mockup_img {
+        right: calc(4vw - 5rem);
     }
     
     .menu_in > a, .collapsible {
         border:2px solid var(--c06);
+    }
+
+    .right_side01 .mobile_mockup_content {
+        width: 12rem;
+        left: unset;
+        top: 8rem;
+        right: calc(4vw + 12.8rem);
+        height: 26rem;
+    } .right_side01 .desktop_mockup_content {
+        width: 48rem;
+        left: unset;
+        top: 2.2rem;
+        right: calc(4vw + 1rem);
+    }
+
+    
+
+    .img_ctnr.desktop_hidden {
+        display:none;
+    } .img_ctnr.mobile_hidden {
+        display:initial;
+    }
+    .menu_in a, .collapsible {
+        font-size: 0.8rem;
     }
 }
 
@@ -996,8 +1028,6 @@ main {
         opacity: 0;
         visibility: hidden;
         transition:opacity 0.4s ease, visibility 0.4s ease;
-    }.menu_in a, .collapsible {
-        font-size: 0.8rem;
     }
 
     header {
@@ -1042,7 +1072,7 @@ main {
         align-items: center;
         padding: 0 1rem;
         margin-left: calc(-1.6rem);
-        margin-right: 1rem;
+        margin-right: 1.5rem;
         cursor: pointer;
     } .header_anchors span {
         padding: 0.3rem 0.6rem;
@@ -1051,9 +1081,6 @@ main {
     } .header_anchors a:hover span, .header_anchors div:hover span {
         background-color: var(--c03);
         color:var(--c02);
-    }
-    .desktop_right img {
-        transform: translateX(calc(-70rem + 55vw));
     }
 
     .smartphone_ctnr .live_demo {
