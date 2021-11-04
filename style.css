@@ -419,19 +419,19 @@ main {
 } .mobile_mockup_content {
     position: absolute;
     left: 0;
-    border-radius: 0.5rem;
+    border-radius: 2vw;
     object-fit: cover;
     object-position: top;
     margin: 0 auto;
 } .desktop_mockup_content.default, .desktop_mockup_content.right_desktop {
-    width: clamp(14.5rem, 74vw, 28rem);
+    width: clamp(14.5rem, 72vw, 28rem);
     left: clamp(1.2rem, 5vw, 20rem);
     top: clamp(1.7rem, 7.5vw, 2.2rem);
 } .mobile_mockup_content.default, .mobile_mockup_content.right_mobile {
     width: clamp(2rem, 19vw, 7.1rem);
     right: clamp(11rem, 61vw, 23.5rem);
     top: clamp(2rem, 21vw, 7.5rem);
-    height: clamp(2rem, 39vw, 15rem);
+    height: clamp(8rem, 40vw, 13.6rem);
 } .desktop_alone .desktop_mockup_content.right_desktop {
     left:0;
 }
@@ -460,15 +460,16 @@ main {
     height: clamp(17rem, 170vw, 30rem);
     margin: 2rem auto 4rem auto;
     opacity: 0.85;
-    transition: transform 1s ease, opacity 1s;
     object-position: center;
     width: 100%;
     object-fit: contain;
 } .dooh_ctnr img:first-of-type {
-    animation: dooh_switch 10s ease-in-out infinite alternate;
+    animation: dooh_switch 10s 2s ease-in-out infinite alternate;
     position: absolute;
 } .dooh_ctnr img:last-of-type {
-    animation: dooh_switch 10s ease-in-out infinite alternate-reverse;
+    animation: dooh_switch 10s 2s ease-in-out infinite alternate-reverse;
+    opacity: 0;
+    transform: scale(0.99);
 } .dooh_ctnr video {
   position: absolute;
   width: 100%;
@@ -932,7 +933,7 @@ main {
 
 
     .smartphone_ctnr {
-        margin: 0 0 2rem 5vw;
+        margin: 0 0 2rem clamp(5rem, 7vw, 6rem);
     }
 
     .desktop_mockup_content {
@@ -940,9 +941,9 @@ main {
     } .mobile_mockup_content {
         border-radius: 1.5rem;
     } .desktop_mockup_content.default {
-        width: 48rem;
-        left: 8rem;
-        top: 2.2rem;
+        width: 47.3rem;
+        left: 8.1rem;
+        top: 2.4rem;
     } .mobile_mockup_content.default {
         width: 12rem;
         left: 3.8rem;
@@ -967,7 +968,8 @@ main {
     }
 
     .right_side01 {
-        -webkit-mask-image: linear-gradient(90deg, transparent 10%, white 62%);
+        -webkit-mask-image: linear-gradient(90deg, transparent 20%, white 62%);
+        right: 8vw;
     } .right_side01 .mockup_img {
         right: calc(4vw - 5rem);
     }

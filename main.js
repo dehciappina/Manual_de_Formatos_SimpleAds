@@ -349,6 +349,7 @@ duration:1600,
 delay:100,
 origin: 'bottom',
 easing: 'ease',
+desktop: false
 });
 
 ScrollReveal().reveal('.img_ctnr', {
@@ -360,7 +361,7 @@ origin: 'right',
 mobile: false
 }); ScrollReveal().reveal('.img_ctnr', {
 duration:2400,
-delay:300,
+delay:100,
 easing: 'ease',
 desktop: false
 });
