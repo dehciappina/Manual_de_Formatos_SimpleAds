@@ -459,10 +459,11 @@ main {
     width: clamp(14rem, 65vw, 17rem);
     height: clamp(17rem, 170vw, 30rem);
     margin: 2rem auto 4rem auto;
-    /* mix-blend-mode: hard-light; */
     opacity: 0.85;
-    /* position: absolute; */
     transition: transform 1s ease, opacity 1s;
+    object-position: center;
+    width: 100%;
+    object-fit: contain;
 } .dooh_ctnr img:first-of-type {
     animation: dooh_switch 10s ease-in-out infinite alternate;
     position: absolute;
@@ -900,6 +901,7 @@ main {
         position: absolute;
     } .img_ctnr {
         min-height: 40rem;
+    } .img_ctnr:not(.dooh_ctnr) {
         filter: drop-shadow(0 0 10px #DADEFC);
     } .img_ctnr svg {
         width: clamp(17rem, 40vw, 34rem);
