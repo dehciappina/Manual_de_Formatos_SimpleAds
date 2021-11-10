@@ -224,6 +224,45 @@ homeBt.addEventListener('click', function() {
 
 
 
+// SHARE BUTTON
+
+const shareButton = document.querySelectorAll('.sharebt')
+
+let shareTitle;
+let shareUrl;
+
+for(i=0;i<shareButton.length;i++) {
+  shareButton[i].addEventListener('click', function() {
+  
+    shareTitle = this.getAttribute('data-title');
+    shareUrl = this.getAttribute('data-url');
+  
+    if (navigator.share) {
+      navigator.share({
+        title: shareTitle,
+        url: shareUrl
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+      .catch(console.error);
+    } else {
+      shareDialog.classList.add('is-open');
+    }
+  }
+  );
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

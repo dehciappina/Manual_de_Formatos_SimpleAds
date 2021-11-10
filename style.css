@@ -74,6 +74,7 @@ body, button {
     --c01: #434A7D;
     --c02: #3d53fc;
     --c02-1:#051678;
+    --c02-2:#3244d2;
     --c03: #F2F4FB;
     --c04: #fd8820;
     --c05: #ee4b29;
@@ -353,6 +354,7 @@ main {
 }
 
 .bullets {
+    position: relative;
     list-style: none;
     padding: 0;
     margin: 0;
@@ -394,6 +396,7 @@ main {
     flex: none;
     box-sizing: border-box;
     border: 1px solid #E7E7F9;
+    z-index: 1;
 }
 
 
@@ -451,6 +454,32 @@ main {
     line-height: 1.6rem;
     border: 1px solid var(--c02);
     transform: translateX(-1.2rem);
+} .sharebt {
+    cursor: pointer;
+    align-self: flex-start;
+} .sharebt:hover p {
+    background-color: var(--c03);
+    transition:background-color 0.03s ease;
+} .sharebt:active p {
+    background-color: var(--c06);
+    transition:background-color 0.03s ease;
+} .sharebt > p {
+    border-left: none;
+    background-color: var(--c06);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    border-color: var(--c06);
+}
+
+.share_window {
+    position: absolute;
+    bottom: 3rem;
+    width: 80vw;
+    height: 20rem;
+    background: var(--c02);
+    z-index: 999;
+    border-radius: 0.2rem;
 }
 
 .dooh_ctnr {
