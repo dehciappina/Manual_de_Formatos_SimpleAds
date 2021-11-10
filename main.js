@@ -242,11 +242,9 @@ for(i=0;i<shareButton.length;i++) {
         title: shareTitle,
         url: shareUrl
       }).then(() => {
-        console.log('Thanks for sharing!');
+        return;
       })
       .catch(console.error);
-    } else {
-      shareDialog.classList.add('is-open');
     }
   }
   );
