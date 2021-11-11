@@ -383,19 +383,19 @@ main {
     margin-bottom: 0;
     line-height: clamp(0.7rem, 4.5vw, 1.1rem);
 } .bullets img {
-    width: 0.7rem;
-    height: 0.7rem;
+    width: 50%;
+    height: 50%;
 } .bullet_icon01 {
     margin: 0 0.9rem 0 0;
     border-radius: 0.15rem;
-    width: 1.4rem;
-    height: 1.4rem;
+    width: 1.6rem;
+    height: 1.6rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex: none;
     z-index: 1;
-    background: var(--c03);
+    background-color: white;
 }
 
 
@@ -449,7 +449,7 @@ main {
     color: var(--c02);
     border-radius: 0.15rem;
     padding: 0 0.8rem 0 1rem;
-    line-height: 1.4rem;
+    line-height: 1.6rem;
     transform: translateX(-1.2rem);
     border: 1px solid var(--c02);
 } .sharebt {
@@ -465,11 +465,11 @@ main {
     transition:background-color 0.03s ease;
 } .sharebt > p {
     border-left: none;
-    background-color: var(--c06);
+    background-color: var(--c03);
     transition: background-color 0.3s ease;
     cursor: pointer;
     user-select: none;
-    border-color: var(--c06);
+    border-color: var(--c03);
     border: none;
 }
 
@@ -1033,6 +1033,11 @@ main {
     .menu_in a, .collapsible {
         font-size: 0.8rem;
     }
+
+
+    .highlight_bullet p {
+        line-height: 1.4rem;
+    }
 }
 
 
@@ -1145,6 +1150,9 @@ main {
 
     .bullet_icon01 {
         transition:background-color 0.9s ease;
+        background: var(--c03);
+        width:1.4rem;
+        height:1.4rem;
     }
      .bullets > li:not(.highlight_bullet):hover .bullet_icon01, .bullets > div:hover .bullet_icon01 {
         transition:background-color 0s ease;
