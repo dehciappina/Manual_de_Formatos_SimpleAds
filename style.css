@@ -455,6 +455,7 @@ main {
 } .sharebt {
     cursor: pointer;
     align-self: flex-start;
+    -moz-display:none;
 } .sharebt .bullet_icon01 {
     border:none;
 } .sharebt > p {
@@ -853,6 +854,16 @@ main {
 
 
 
+/* FIREFOX BROWSER */
+
+
+@-moz-document url-prefix(){
+    
+    .sharebt {
+        display:none !important;
+    }
+
+}
 
 
 
@@ -868,6 +879,10 @@ main {
 
 
 
+
+
+
+/* TABLET SIZE */
 
 
 @media (min-width:50vh) and (min-width:720px){
@@ -1050,7 +1065,7 @@ main {
 
 
 
-
+/* DESKTOP SIZE */
 
 @media (min-width:1100px) and (orientation: landscape)  {
 
