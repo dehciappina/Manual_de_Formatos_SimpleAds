@@ -975,7 +975,7 @@ main {
 
     .live_demo {
         position: absolute;
-        bottom: 5rem;
+        bottom: 0;
         right: clamp(5rem, 12vw, 13rem);
         width: unset;
         padding: 0.5rem 2rem;
@@ -985,6 +985,7 @@ main {
         text-align: center;
         z-index: 2;
         line-height: 1rem;
+        margin: 0 auto 0 auto;
     }
     
     .interscroller h2 {
