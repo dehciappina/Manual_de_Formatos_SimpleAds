@@ -32,7 +32,23 @@ document.onreadystatechange = function () {
         loading.style.opacity = 0;
         loading.style.visibility = 'hidden';
 
+        
+        if (window.location.href.indexOf("#") > -1) {
+            
+            if (window.location.href.indexOf("video_vertical") > -1) {
+                document.querySelector('#Interscroller_video_vertical').click()
+            } else if(window.location.href.indexOf("video_e_bg") > -1) {
+                document.querySelector('#Interscroller_video_bg').click()
+            } else if(window.location.href.indexOf("video") > -1) {
+                document.querySelector('#instagram_feed_video').click()
+                document.querySelector('#facebook_feed_video').click()
+                document.querySelector('#instagram_stories_video').click()
+                document.querySelector('#facebook_stories_video').click()
+            }
+            
+        } 
     }
+    
 }
 
 const hamb = document.querySelector('.hamb')
@@ -373,3 +389,13 @@ delay:100,
 easing: 'ease',
 desktop: false
 });
+
+
+
+
+
+
+
+
+
+

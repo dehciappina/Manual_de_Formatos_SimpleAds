@@ -174,7 +174,7 @@ header {
     padding: 1rem 0 0 1rem;
     box-sizing: border-box;
     border-top: 2px solid var(--c06);
-    padding: 1rem 0 8rem 0;
+    padding: 1rem 0 4rem 0;
 } .menu span {
     font-size: 0.75rem;
     font-weight: 700;
@@ -264,7 +264,12 @@ main {
     margin: 0 0 0.2rem 0;
 }
 
-.formato_sec p {
+.formato_sec {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #DDF;
+    padding: clamp(3.8rem, 9vw, 5rem) 0 0 0;
+} .formato_sec p {
     font-size: clamp(0.9rem, 4.5vw, 0.95rem);
     line-height: clamp(1.4rem, 4vw, 1.5rem);
     margin-bottom: 1rem;
@@ -274,9 +279,6 @@ main {
     color: var(--c01);
     padding-bottom: 0.4rem;
     margin-top: 1rem;
-} .formato_sec {
-    display: flex;
-    flex-direction: column;
 } .cta01{
     margin: 0 0 1.4rem;
     padding: 0.5rem 2rem;
@@ -287,12 +289,11 @@ main {
     font-size: clamp(0.9rem, 5vw, 1.1rem);
 } .formato_sec article {
     width: clamp(17rem, 85vw, 24rem);
-    margin: 3rem auto 1rem auto;
+    margin: 0rem auto 1rem auto;
 } .formato_sec:first-of-type article {
     margin: 10vw auto 1rem auto;
-} .formato_sec {
-    border-bottom: 2px solid #DDF;
-} .formato_sec menu {
+} 
+.formato_sec menu {
     display: flex;
     flex-direction: row;
     list-style: none;
@@ -762,7 +763,7 @@ main {
   .collapsible_content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    transition: max-height 0.25s ease;
     flex: none;
     display: flex;
     flex-direction: column;
@@ -851,7 +852,7 @@ main {
 } .size_list p {
     padding: 0.1rem 0.3rem;
     background: var(--c06);
-    margin: 0 0.3rem 0.3rem 0;
+    margin: 0 0 0.3rem 0.3rem;
 }
 
 
@@ -974,7 +975,7 @@ main {
 
     .live_demo {
         position: absolute;
-        bottom: -2rem;
+        bottom: 5rem;
         right: clamp(5rem, 12vw, 13rem);
         width: unset;
         padding: 0.5rem 2rem;
