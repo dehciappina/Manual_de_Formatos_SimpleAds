@@ -79,25 +79,20 @@
 
                 <div class="menu_in">
                     <a href="#body" id="home">
-                        <img class="mobile_hidden" src="assets/icons/home.svg" alt="">
-                        Início
+                        <img class="mobile_hidden" src="assets/icons/home.svg" alt="">Início
                     </a>
 
                     <a class="specs_bt">
-                        <img class="mobile_hidden" src="assets/icons/info.svg" alt="">
-                        Especificações Gerais
+                        <img class="mobile_hidden" src="assets/icons/info.svg" alt="">Especificações Gerais
                     </a>
 
-                    <a class="desktop_hidden" href="https://simpleads.com.br/solucoes/" target="_blank">
-                        Soluções
+                    <a class="desktop_hidden" href="https://simpleads.com.br/solucoes/" target="_blank">Soluções
                     </a>
 
-                    <!-- <a class="desktop_hidden" href="#">
-                        Suporte criativo
+                    <!-- <a class="desktop_hidden" href="#">Suporte criativo
                     </a> -->
 
-                    <a class="desktop_hidden" href="https://simpleads.com.br/#contactform" target="_blank">
-                        Contato
+                    <a class="desktop_hidden" href="https://simpleads.com.br/#contactform" target="_blank">Contato
                     </a>
 
                     <span>FORMATOS DE ANÚNCIO</span>
@@ -132,9 +127,9 @@
                         <a href="midia-programatica.html#video_linear">Video linear</a>
                         <a href="midia-programatica.html#audio">Áudio</a>
                         <a href="midia-programatica.html#native_display">Native Display</a>
-                        <a href="midia-programatica.html#youtube_trueview">Youtube Trueview</a>
-                        <a href="midia-programatica.html#youtube_bumper">Youtube Bumper</a>
-                        <a href="midia-programatica.html#youtube_discovery">Youtube Discovery</a>
+                        <a href="midia-programatica.html#youtube_trueview">YouTube Trueview</a>
+                        <a href="midia-programatica.html#youtube_bumper">YouTube Bumper</a>
+                        <a href="midia-programatica.html#youtube_discovery">YouTube Discovery</a>
                         <a href="midia-programatica.html#twitch">Twitch</a>
                     </div>
                     
@@ -1149,76 +1144,6 @@
                         <h2>Compatibilidade</h2>
 
                         <p>Nossos formatos são compatíveis com todos os navegadores, em todas as versões mais recentes que somadas atinjam mais de 99% dos usuários.</p>
-                    </div>
-                </section>
-
-                <section class="excroll_clicktag_section">
-                    <div>
-                        <h2>Implementação de Clicktags e URLs de redirecionamento</h2>
-
-                        <p>Em todas as campanhas é obrigatório o envio de ao menos uma URL de redirecionamento, que leva o usuário à landing page da campanha, após o clique. Essa URL pode ser parametrizada para identificação do volume de entrega no Google Analytics.</p>
-
-                        <p>Para peças em HTML 5, é necessária a inserção da clicktag abaixo:</p>
-
-                        <p>1. Chamar a biblioteca da clicktag dentro do <span class="code_word">&lt;head&gt;</span> da peça criativa:</p>
-
-                        <textarea onClick="this.select();execCommand('copy')" class="code height_02" readonly spellcheck="false" title="clique para copiar">&lt;script src="//ns.sascdn.com/diff/templates/js/banner/sas-clicktag-3.1.js">&lt;/script></textarea>
-                        
-
-                        <p>2. Declarar a variável <span class="code_word">clickTag</span> e preencher com o valor, que é a URL de redirecionamento:</p>
-
-                        <textarea onClick="this.select();execCommand('copy')" class="code height_02" readonly spellcheck="false" title="clique para copiar">&lt;script&gt;var clickTag = "https://www.url-de-redirecionamento.com";&lt;/script&gt;</textarea>
-
-                        <p>3. Criar uma área de clique para a peça, incluindo um ID nesse elemento, como:</p>
-
-                        <textarea onClick="this.select();execCommand('copy')" class="code height_01" readonly spellcheck="false" title="clique para copiar">&lt;a id="clickArea"&gt;&lt;/a&gt;</textarea>
-
-                        <p>4. Através do ID, é necessário associar o elemento à variável. Este código deve ser chamado ao final do código, de preferência antes do fechamento da tag da peça criativa:</p>
-
-                        <textarea onClick="this.select();execCommand('copy')" class="code height_03" readonly spellcheck="false" title="clique para copiar">&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
-var clickArea = document.getElementById(&#x22;clickArea&#x22;);
-clickArea.onclick = function(){
-window.open(clickTag, &#x22;blank&#x22;); 
-} 
-&#x3C;/script&#x3E;</textarea>
-
-                        <p>5. Salve o arquivo principal como index.html e envie todos os arquivos juntos em formato zip, sem subdiretórios.</p>
-                    </div>
-                </section>
-
-                <section class="midia_programatica_clicktag_section">
-                    <div>
-                        <h2>Implementação de Clicktags e URLs de redirecionamento</h2>
-
-                        <p>Em todas as campanhas é obrigatório o envio de ao menos uma URL de redirecionamento, que leva o usuário à landing page da campanha, após o clique. Essa URL pode ser parametrizada para identificação do volume de entrega no Google Analytics.</p>
-
-                        <p>Para peças em HTML 5, é necessária a inserção da clicktag abaixo:</p>
-
-                        <p>1. Definir a variável da clicktag as dimensões do criativo dentro da tag <span class="code_word">&lt;head&gt;</span> da peça criativa:</p>
-
-                        <textarea onClick="this.select();execCommand('copy')" class="code height_03" readonly spellcheck="false" title="clique para copiar">
-&lt;html&gt;
-&lt;head&gt; 
-    &lt;meta name="ad.size" content="width=300,height=250"&gt;
-    &lt;script type="text/javascript"&gt;
-    // Substitua https://www.example.com pelo seu próprio URL.
-    var clickTag = "https://www.example.com";
-    &lt;/script&gt; 
-&lt;/head&gt;
-&lt;/html&gt;
-                        </textarea>
-                        
-
-                        <p>2. Anexar a click tag ao elemento em que você quer que as pessoas cliquem:</p>
-
-
-                        <textarea onClick="this.select();execCommand('copy')" class="code height_02" readonly spellcheck="false" title="clique para copiar">
-&lt;a href="javascript:window.open(window.clickTag)"&gt;
-    &lt;img src="images/dclk.png" border=0&gt;
-&lt;/a&gt;
-                        </textarea>
-
-                        <p>Salve o arquivo principal como index.html e envie todos os arquivos juntos em formato zip, sem subdiretórios.</p>
                     </div>
                 </section>
             </main>

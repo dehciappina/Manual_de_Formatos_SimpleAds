@@ -88,7 +88,7 @@ a {
     color:unset;
 }
 
-img {
+img, svg text {
     user-select: none;
 }
 
@@ -183,7 +183,7 @@ header {
     margin: 1rem 0 0.6rem 0;
 } .menu_in a, .collapsible {
     font-size: clamp(0.8rem, 3.5vw, 1rem);
-    padding: 0 1.5rem 0 0.6rem;
+    padding: 0 1.5rem 0 0;
     color: var(--c08);
     letter-spacing: 0.6px;
     margin: 0.2rem 0 0.2rem 0;
@@ -191,7 +191,7 @@ header {
     font-weight: 500;
     border-radius: 0.15rem;
     cursor: pointer;
-    line-height: 2.4rem;
+    line-height: 2.2rem;
 } .menu a {
     transition: background-color 0.6s ease, color 0.6s ease;
 } .menu a:hover, .collapsible:hover {
@@ -216,7 +216,7 @@ header {
     margin: 0 1rem;
     padding: 0 0 0 clamp(0.5rem, 3vw, 1.15rem);
 } .menu_in a img {
-    margin: 0 0.4rem;
+    margin: 0 0.8rem;
     width: 0.75rem;
     height: 0.7rem;
 } .menu_in > a, .collapsible {
@@ -231,7 +231,6 @@ header {
 }
 
 main {
-    padding: clamp(3.8rem, 9vw, 5rem) 0 0 0;
     background-color: var(--c03);
     width:100%;
 } main h1, main h2 {
@@ -331,29 +330,6 @@ main {
 } .formato_sec menu li:not(:last-child) {
     border-right: 1px solid #CDF;
 }
-
-.live_demo {
-    display: block;
-    margin: 0 auto 2rem auto;
-    color: var(--c02);
-    line-height: 2.5rem;
-    border-radius: 0.15rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.8rem;
-    width: 80vw;
-    font-weight: 500;
-    text-align: center;
-    background-color:white;
-} .smartphone_ctnr .live_demo {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: 0;
-    transform: translateY(160%);
-}
-
 .bullets {
     position: relative;
     list-style: none;
@@ -371,14 +347,14 @@ main {
     min-width: 12rem;
 } .bullets li {
     display: flex;
-    padding-bottom: 0.8rem;
+    padding-bottom: 0.6rem;
     align-items: center;
-} .bullets li a, .bullets .specs_bt, .bullets .clicktag_RM_bt, .bullets .clicktag_programatica_bt {
+} .bullets li:not(.live_demo_bt) a, .bullets .specs_bt, .bullets .clicktag_RM_bt, .bullets .clicktag_programatica_bt {
     cursor: pointer;
     text-decoration: underline;
 } .specs_bt:hover, .clicktag_RM_bt:hover, .clicktag_programatica_bt:hover {
     color:var(--c02);
-} .bullets p {
+} .bullets p, .bullets a {
     font-size: clamp(0.7rem, 3.5vw, 0.8rem);
     letter-spacing: 0.4px;
     margin-bottom: 0;
@@ -444,22 +420,23 @@ main {
     background: var(--c02);
     border: 1px solid var(--c02);
 } .highlight_bullet .bullet_icon01 > img {
-    width: 50%;
+    width: 60%;
     height: 50%;
-} .highlight_bullet p {
+} .highlight_bullet p, .highlight_bullet a {
     color: var(--c02);
     border-radius: 0.15rem;
     padding: 0 0.8rem 0 1rem;
     line-height: 1.6rem;
     transform: translateX(-1.2rem);
     border: 1px solid var(--c02);
-} .sharebt {
+    text-decoration: none;
+} .sharebt, .live_demo_bt {
     cursor: pointer;
     align-self: flex-start;
     -moz-display:none;
-} .sharebt .bullet_icon01 {
+} .sharebt .bullet_icon01, .live_demo_bt .bullet_icon01 {
     border:none;
-} .sharebt > p {
+} .sharebt > p, .live_demo_bt > a {
     border-left: none;
     background-color: white;
     transition: background-color 0.3s ease;
@@ -686,7 +663,6 @@ main {
     object-position: top;
     top: 0.5rem;
 } .smartphone_mockup {
-    position:absolute;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -723,7 +699,7 @@ main {
     align-items: center;
   } .collapsible > div {
     display: block;
-    margin: 0 0.6rem;
+    margin: 0 1rem;
     transform: rotate(0deg);
     transition: transform 0.15s ease-out, border-color 1s ease;
     width: 0;
@@ -847,18 +823,27 @@ main {
     display:none;
 }
 
-.size_list {
+.list_within {
     flex-flow: row wrap;
-} .size_list p {
-    padding: 0.1rem 0.3rem;
+} .list_within p {
+    padding: 0rem 0.3rem;
     background: var(--c06);
-    margin: 0 0 0.3rem 0.3rem;
+    margin: 0.2rem 0 0.3rem 0.3rem;
 }
 
 
+.live_demo_bt .bullet_icon01 {
+    background-color: crimson;
+}.live_demo_bt a {
+    background-color: #ffeef2;
+    color:crimson;
+}
 
-
-
+pre b {
+    font-weight: 900;
+} p b {
+    font-weight: 600;
+}
 
 
 
@@ -971,21 +956,7 @@ main {
         margin: 0rem 0 2rem 3rem;
     } .img_ctnr:not(.smartphone_ctnr) {
         flex: 1;
-    }
-
-    .live_demo {
-        position: absolute;
-        bottom: 0;
-        right: clamp(5rem, 12vw, 13rem);
-        width: unset;
-        padding: 0.5rem 2rem;
-        text-align: left;
-        border-color: #DDF;
-        box-sizing: border-box;
-        text-align: center;
-        z-index: 2;
-        line-height: 1rem;
-        margin: 0 auto 0 auto;
+        align-self: self-start;
     }
     
     .interscroller h2 {
@@ -1067,7 +1038,7 @@ main {
     }
 
 
-    .highlight_bullet p {
+    .highlight_bullet p, .highlight_bullet a {
         line-height: 1.4rem;
     }
 }
@@ -1166,6 +1137,7 @@ main {
         margin-left: calc(-1.6rem);
         margin-right: 1.5rem;
         cursor: pointer;
+        user-select: none;
     } .header_anchors span {
         padding: 0.3rem 0.6rem;
         transition: background-color 0.2s ease-out, color 0.2s ease-out;
@@ -1174,12 +1146,6 @@ main {
         background-color: var(--c03);
         color:var(--c02);
     }
-
-    .smartphone_ctnr .live_demo {
-        right: 4rem;
-        left: 3rem;
-    }
-
     .bullet_icon01 {
         transition:background-color 0.9s ease;
         background: var(--c03);
@@ -1193,10 +1159,10 @@ main {
 
     .sharebt > p {
         background-color: var(--c03);
-    } .sharebt:hover p {
+    } .sharebt:hover p, .live_demo_bt:hover a {
         background-color: white;
         transition:background-color 0.03s ease;
-    } .sharebt:active p {
+    } .sharebt:active p, .live_demo_bt:active a {
         background-color: var(--c06);
         transition:background-color 0.03s ease;
     }
