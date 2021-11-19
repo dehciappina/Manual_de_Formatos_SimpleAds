@@ -39,7 +39,7 @@ document.onreadystatechange = function () {
                 document.querySelector('#Interscroller_video_vertical').click()
             } else if(window.location.href.indexOf("video_e_bg") > -1) {
                 document.querySelector('#Interscroller_video_bg').click()
-            } else if(window.location.href.indexOf("video") > -1) {
+            } else if(window.location.href.indexOf("social_video") > -1) {
                 document.querySelector('#instagram_feed_video').click()
                 document.querySelector('#facebook_feed_video').click()
                 document.querySelector('#instagram_stories_video').click()
