@@ -191,7 +191,10 @@ if (!window.matchMedia("(min-width: 150vh)").matches) {
       }, 50);
     })
   }
-  voltarAoTopo.addEventListener('click', toggleMenu)
+  voltarAoTopo.addEventListener('click', function() {
+    showingMenu = true;
+    toggleMenu()
+  })
 }
 
 hamb.addEventListener('click', toggleMenu)

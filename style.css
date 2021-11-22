@@ -271,13 +271,13 @@ main {
 } .formato_sec p {
     font-size: clamp(0.9rem, 4.5vw, 0.95rem);
     line-height: clamp(1.4rem, 4vw, 1.5rem);
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
     max-width: 42rem;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 } .formato_sec article > p {
-    color: var(--c01);
+    color: var(--c08);
     padding-bottom: 0.4rem;
-    margin-top: 1rem;
+    margin-top: 0.6rem;
 } .cta01{
     margin: 0 0 1.4rem;
     padding: 0.5rem 2rem;
@@ -828,7 +828,7 @@ main {
 } .list_within p {
     padding: 0rem 0.3rem;
     background: var(--c06);
-    margin: 0.2rem 0 0.3rem 0.3rem;
+    margin: 0.2rem 0.3rem 0.3rem 0;
 }
 
 
@@ -1113,7 +1113,7 @@ pre b {
     .specs, .excroll_clicktag_section, .midia_programatica_clicktag_section {
         left: clamp(19rem, 24vw, 20.5rem);
         width: clamp(15rem, 50vw, 45rem);
-        padding-top: 2rem;
+        padding-top: 6rem;
     } .specs div, .excroll_clicktag_section div, .midia_programatica_clicktag_section div {
         margin: 0 auto;
         width: 75%;
