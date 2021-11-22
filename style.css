@@ -81,6 +81,7 @@ body, button {
     --c06: #ECF0FD;
     --c07: #808194;
     --c08: #606bbe;
+    --c09: #FC3D46;
 }
   
 a {
@@ -833,10 +834,10 @@ main {
 
 
 .live_demo_bt .bullet_icon01 {
-    background-color: crimson;
+    background-color: var(--c09);
 }.live_demo_bt a {
-    background-color: #ffeef2;
-    color:crimson;
+    background-color: #ffeced;
+    color:var(--c09);
 }
 
 pre b {
@@ -899,13 +900,13 @@ pre b {
         flex-direction: row;
         position:relative;
     } .formato_sec:first-of-type {
-        padding: 3rem 0 clamp(1rem, 10vw, 3rem) 0;
+        padding: 8rem 0 clamp(1rem, 10vw, 3rem) 0;
     }
     .formato_sec > article, .formato_sec:first-of-type article {
         width: 30%;
         min-width: 21rem;
         max-width: 23rem;
-        margin: 0 0 0 clamp(2rem, calc(15vw - 6rem), 4rem);
+        margin: 0 0 0 clamp(2rem, calc(15vw - 6rem), 3.5rem);
     } .cta01{
         transition: filter 0.1s ease, transform 0.05s ease;
     } .cta01:hover {
@@ -1073,6 +1074,10 @@ pre b {
         display:none;
     } .mobile_hidden {
         display:initial;
+    }
+
+    .formato_sec:first-of-type {
+        padding: 3rem 0 clamp(1rem, 10vw, 3rem) 0;
     }
     
     .menu {
