@@ -1024,7 +1024,7 @@ pre b {
         width: 48rem;
         left: unset;
         top: 2.2rem;
-        right: calc(4vw + 1.5rem);
+        right: calc(4vw - 0.4rem);
     }
 
     .desktop_alone .desktop_mockup_content.right_desktop {
@@ -1092,6 +1092,7 @@ pre b {
         justify-content: space-between;
         transition:none;
         padding-top: 0;
+        transform: none !important;
     }  .menu_in {
         border-top: none;
     } .menu_bg {
