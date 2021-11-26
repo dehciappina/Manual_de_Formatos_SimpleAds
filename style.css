@@ -109,6 +109,7 @@ header {
 } .logo img {
     object-fit: contain;
     width: 100%;
+    filter: blur(0.3px);
 }
 
 .mobile_hidden, .img_ctnr.mobile_hidden {
@@ -224,6 +225,8 @@ header {
     border: 1px solid var(--c06);
     transition: background-color 0.3s ease;
     background-color:transparent;
+} .menu_in > a {
+    padding-left: 0.9rem;
 }
 
 .flex_row {
@@ -1007,7 +1010,6 @@ pre b {
     } .right_side01 .mockup_img {
         right: calc(4vw - 5rem);
     }
-    
     .menu_in > a, .collapsible {
         border:2px solid var(--c06);
     }
@@ -1110,6 +1112,10 @@ pre b {
         height: 2.8rem;
         margin:0;
     }
+
+    .menu_in > a {
+        padding-left: unset;
+    }    
 
     .bullets {
         flex-direction: column;
